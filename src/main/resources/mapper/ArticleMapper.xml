@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.connext.dao.ArticleMapper">
+    <resultMap id="BaseResultMap" type="com.connext.pojo.Article">
+        <id column="articleid" property="articleid" jdbcType="INTEGER"/>
+        <result column="articletitle" property="articletitle" jdbcType="VARCHAR"/>
+        <result column="articlecontent" property="articlecontent" jdbcType="VARCHAR"/>
+        <result column="articleaddtime" property="articleaddtime" jdbcType="TIMESTAMP"/>
+        <result column="articleuserid" property="articleuserid" jdbcType="INTEGER"/>
+        <result column="articlecommentnum" property="articlecommentnum" jdbcType="INTEGER"/>
+        <result column="articlelastcommenttime" property="articlelastcommenttime" jdbcType="TIMESTAMP"/>
+        <association property="user" javaType="com.connext.pojo.User">
+            <id column="userid" property="userid" jdbcType="INTEGER" />
+            <result column="username" property="username" jdbcType="VARCHAR" />
+            <result column="userphone" property="userphone" jdbcType="VARCHAR" />
+            <result column="userpassword" property="userpassword" jdbcType="VARCHAR" />
+            <result column="usergrade" property="usergrade" jdbcType="INTEGER" />
+        </association>
+
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+        articleid, articletitle, articlecontent, articleaddtime, articleuserid, articlecommentnum,
+        articlelastcommenttime
+    </sql>
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.connext.pojo.ArticleExample">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from article
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectAllArticles" resultMap="BaseResultMap">
+        select
+        a.*,u.username
+        from article a,user u
+        where a.articleuserid=u.userid
+        ORDER  BY articlelastcommenttime DESC
+    </select>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+          a.*,u.username
+        from article a,user u
+        where articleid = #{articleid,jdbcType=INTEGER} AND a.articleuserid=u.userid
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from article
+    where articleid = #{articleid,jdbcType=INTEGER}
+  </delete>
+    <delete id="deleteByExample" parameterType="com.connext.pojo.ArticleExample">
+        delete from article
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.connext.pojo.Article">
+    insert into article (articleid, articletitle, articlecontent, 
+      articleaddtime, articleuserid, articlecommentnum, 
+      articlelastcommenttime)
+    values (#{articleid,jdbcType=INTEGER}, #{articletitle,jdbcType=VARCHAR}, #{articlecontent,jdbcType=VARCHAR}, 
+      #{articleaddtime,jdbcType=TIMESTAMP}, #{articleuserid,jdbcType=INTEGER}, #{articlecommentnum,jdbcType=INTEGER}, 
+      #{articlelastcommenttime,jdbcType=TIMESTAMP})
+  </insert>
+    <insert id="insertSelective" parameterType="com.connext.pojo.Article">
+        insert into article
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="articleid != null">
+                articleid,
+            </if>
+            <if test="articletitle != null">
+                articletitle,
+            </if>
+            <if test="articlecontent != null">
+                articlecontent,
+            </if>
+            <if test="articleaddtime != null">
+                articleaddtime,
+            </if>
+            <if test="articleuserid != null">
+                articleuserid,
+            </if>
+            <if test="articlecommentnum != null">
+                articlecommentnum,
+            </if>
+            <if test="articlelastcommenttime != null">
+                articlelastcommenttime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="articleid != null">
+                #{articleid,jdbcType=INTEGER},
+            </if>
+            <if test="articletitle != null">
+                #{articletitle,jdbcType=VARCHAR},
+            </if>
+            <if test="articlecontent != null">
+                #{articlecontent,jdbcType=VARCHAR},
+            </if>
+            <if test="articleaddtime != null">
+                #{articleaddtime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="articleuserid != null">
+                #{articleuserid,jdbcType=INTEGER},
+            </if>
+            <if test="articlecommentnum != null">
+                #{articlecommentnum,jdbcType=INTEGER},
+            </if>
+            <if test="articlelastcommenttime != null">
+                #{articlelastcommenttime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.connext.pojo.ArticleExample" resultType="java.lang.Integer">
+        select count(*) from article
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update article
+        <set>
+            <if test="record.articleid != null">
+                articleid = #{record.articleid,jdbcType=INTEGER},
+            </if>
+            <if test="record.articletitle != null">
+                articletitle = #{record.articletitle,jdbcType=VARCHAR},
+            </if>
+            <if test="record.articlecontent != null">
+                articlecontent = #{record.articlecontent,jdbcType=VARCHAR},
+            </if>
+            <if test="record.articleaddtime != null">
+                articleaddtime = #{record.articleaddtime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.articleuserid != null">
+                articleuserid = #{record.articleuserid,jdbcType=INTEGER},
+            </if>
+            <if test="record.articlecommentnum != null">
+                articlecommentnum = #{record.articlecommentnum,jdbcType=INTEGER},
+            </if>
+            <if test="record.articlelastcommenttime != null">
+                articlelastcommenttime = #{record.articlelastcommenttime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update article
+        set articleid = #{record.articleid,jdbcType=INTEGER},
+        articletitle = #{record.articletitle,jdbcType=VARCHAR},
+        articlecontent = #{record.articlecontent,jdbcType=VARCHAR},
+        articleaddtime = #{record.articleaddtime,jdbcType=TIMESTAMP},
+        articleuserid = #{record.articleuserid,jdbcType=INTEGER},
+        articlecommentnum = #{record.articlecommentnum,jdbcType=INTEGER},
+        articlelastcommenttime = #{record.articlelastcommenttime,jdbcType=TIMESTAMP}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.connext.pojo.Article">
+        update article
+        <set>
+            <if test="articletitle != null">
+                articletitle = #{articletitle,jdbcType=VARCHAR},
+            </if>
+            <if test="articlecontent != null">
+                articlecontent = #{articlecontent,jdbcType=VARCHAR},
+            </if>
+            <if test="articleaddtime != null">
+                articleaddtime = #{articleaddtime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="articleuserid != null">
+                articleuserid = #{articleuserid,jdbcType=INTEGER},
+            </if>
+            <if test="articlecommentnum != null">
+                articlecommentnum = #{articlecommentnum,jdbcType=INTEGER},
+            </if>
+            <if test="articlelastcommenttime != null">
+                articlelastcommenttime = #{articlelastcommenttime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where articleid = #{articleid,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.connext.pojo.Article">
+    update article
+    set articletitle = #{articletitle,jdbcType=VARCHAR},
+      articlecontent = #{articlecontent,jdbcType=VARCHAR},
+      articleaddtime = #{articleaddtime,jdbcType=TIMESTAMP},
+      articleuserid = #{articleuserid,jdbcType=INTEGER},
+      articlecommentnum = #{articlecommentnum,jdbcType=INTEGER},
+      articlelastcommenttime = #{articlelastcommenttime,jdbcType=TIMESTAMP}
+    where articleid = #{articleid,jdbcType=INTEGER}
+  </update>
+</mapper>

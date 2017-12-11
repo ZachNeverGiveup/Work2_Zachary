@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.connext.dao.CommentMapper" >
+  <resultMap id="BaseResultMap" type="com.connext.pojo.Comment" >
+    <id column="commentid" property="commentid" jdbcType="INTEGER" />
+    <result column="commentcontent" property="commentcontent" jdbcType="VARCHAR" />
+    <result column="commentuserid" property="commentuserid" jdbcType="INTEGER" />
+    <result column="commentarticleid" property="commentarticleid" jdbcType="INTEGER" />
+    <result column="commenttime" property="commenttime" jdbcType="TIMESTAMP" />
+    <association property="user" javaType="com.connext.pojo.User">
+      <id column="userid" property="userid" jdbcType="INTEGER" />
+      <result column="username" property="username" jdbcType="VARCHAR" />
+      <result column="userphone" property="userphone" jdbcType="VARCHAR" />
+      <result column="userpassword" property="userpassword" jdbcType="VARCHAR" />
+      <result column="usergrade" property="usergrade" jdbcType="INTEGER" />
+    </association>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    commentid, commentcontent, commentuserid, commentarticleid, commenttime
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.connext.pojo.CommentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from comment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from comment
+    where commentid = #{commentid,jdbcType=INTEGER}
+  </select>
+  <select id="selectCommentsByArticleId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    co.*,u.username
+    from comment co,user u
+    where co.commentarticleid = #{articleId,jdbcType=INTEGER} AND co.commentuserid=u.userid
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from comment
+    where commentid = #{commentid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.connext.pojo.CommentExample" >
+    delete from comment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.connext.pojo.Comment" >
+    insert into comment (commentid, commentcontent, commentuserid, 
+      commentarticleid, commenttime)
+    values (#{commentid,jdbcType=INTEGER}, #{commentcontent,jdbcType=VARCHAR}, #{commentuserid,jdbcType=INTEGER}, 
+      #{commentarticleid,jdbcType=INTEGER}, #{commenttime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.connext.pojo.Comment" >
+    insert into comment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="commentid != null" >
+        commentid,
+      </if>
+      <if test="commentcontent != null" >
+        commentcontent,
+      </if>
+      <if test="commentuserid != null" >
+        commentuserid,
+      </if>
+      <if test="commentarticleid != null" >
+        commentarticleid,
+      </if>
+      <if test="commenttime != null" >
+        commenttime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="commentid != null" >
+        #{commentid,jdbcType=INTEGER},
+      </if>
+      <if test="commentcontent != null" >
+        #{commentcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="commentuserid != null" >
+        #{commentuserid,jdbcType=INTEGER},
+      </if>
+      <if test="commentarticleid != null" >
+        #{commentarticleid,jdbcType=INTEGER},
+      </if>
+      <if test="commenttime != null" >
+        #{commenttime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.connext.pojo.CommentExample" resultType="java.lang.Integer" >
+    select count(*) from comment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update comment
+    <set >
+      <if test="record.commentid != null" >
+        commentid = #{record.commentid,jdbcType=INTEGER},
+      </if>
+      <if test="record.commentcontent != null" >
+        commentcontent = #{record.commentcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.commentuserid != null" >
+        commentuserid = #{record.commentuserid,jdbcType=INTEGER},
+      </if>
+      <if test="record.commentarticleid != null" >
+        commentarticleid = #{record.commentarticleid,jdbcType=INTEGER},
+      </if>
+      <if test="record.commenttime != null" >
+        commenttime = #{record.commenttime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update comment
+    set commentid = #{record.commentid,jdbcType=INTEGER},
+      commentcontent = #{record.commentcontent,jdbcType=VARCHAR},
+      commentuserid = #{record.commentuserid,jdbcType=INTEGER},
+      commentarticleid = #{record.commentarticleid,jdbcType=INTEGER},
+      commenttime = #{record.commenttime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.connext.pojo.Comment" >
+    update comment
+    <set >
+      <if test="commentcontent != null" >
+        commentcontent = #{commentcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="commentuserid != null" >
+        commentuserid = #{commentuserid,jdbcType=INTEGER},
+      </if>
+      <if test="commentarticleid != null" >
+        commentarticleid = #{commentarticleid,jdbcType=INTEGER},
+      </if>
+      <if test="commenttime != null" >
+        commenttime = #{commenttime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where commentid = #{commentid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.connext.pojo.Comment" >
+    update comment
+    set commentcontent = #{commentcontent,jdbcType=VARCHAR},
+      commentuserid = #{commentuserid,jdbcType=INTEGER},
+      commentarticleid = #{commentarticleid,jdbcType=INTEGER},
+      commenttime = #{commenttime,jdbcType=TIMESTAMP}
+    where commentid = #{commentid,jdbcType=INTEGER}
+  </update>
+</mapper>

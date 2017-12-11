@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.connext.dao.UserMapper" >
+<insert id="insertUser" parameterType="com.connext.pojo.User" >
+    insert into user (userid,username, userphone, userpassword       )
+    values (#{userid,jdbcType=INTEGER},#{username,jdbcType=VARCHAR}, #{userphone,jdbcType=VARCHAR}, #{userpassword,jdbcType=VARCHAR}       )
+  </insert>
+  
+  <select id="selectByUserphone" resultType="com.connext.pojo.User" parameterType="String">
+  	select 
+  	userid,username,userphone,userpassword,usergrade
+    from user 
+     where userphone = #{userphone,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByUser" resultType="com.connext.pojo.User" parameterType="com.connext.pojo.User">
+  	select 
+  	userid,username,userphone,userpassword,usergrade
+    from user 
+     where userphone = #{userphone,jdbcType=VARCHAR} and userpassword = #{userpassword,jdbcType=VARCHAR}
+  </select>
+</mapper>
