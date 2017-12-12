@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface CommentService {
     List<Comment> selectCommentsByArticleId(Integer articleId);
+    void insertSelective(Comment record);
 }

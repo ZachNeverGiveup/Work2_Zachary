@@ -29,8 +29,28 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
+    public List<Article> selectArticlesByUserId(Integer userId) {
+        return articleMapper.selectByUserId(userId);
+    }
+
+    @Override
     public Article selectArticleByPrimaryKey(Integer id) {
         return articleMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public void updateByPrimaryKeySelective(Article article) {
+        articleMapper.updateByPrimaryKeySelective(article);
+    }
+
+    @Override
+    public void insertArticle(Article article) {
+        articleMapper.insertSelective(article);
+    }
+
+    @Override
+    public void deleteArticleById(Integer id) {
+        articleMapper.deleteByPrimaryKey(id);
     }
 }
 

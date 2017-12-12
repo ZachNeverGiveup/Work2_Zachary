@@ -109,6 +109,13 @@
         from article a,user u
         where articleid = #{articleid,jdbcType=INTEGER} AND a.articleuserid=u.userid
     </select>
+    <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        a.*,u.username
+        from article a,user u
+        where articleuserid = #{articleuserid,jdbcType=INTEGER} AND u.userid=#{articleuserid,jdbcType=INTEGER}
+        ORDER  BY articleaddtime DESC
+    </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from article
     where articleid = #{articleid,jdbcType=INTEGER}
@@ -224,6 +231,7 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
+    <!-- 根据主键更新文章信息-->
     <update id="updateByPrimaryKeySelective" parameterType="com.connext.pojo.Article">
         update article
         <set>

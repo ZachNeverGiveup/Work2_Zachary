@@ -170,5 +170,15 @@ public class UserController {
             return "redirect:toArticleAll.do";
         }
     }
+
+    /**
+     * 界面跳转，前往管理会员界面
+     * @return
+     */
+    @RequestMapping("toManageUser.do")
+    public String toManageUser(){
+        logger.info("尊敬的联蔚论坛管理员正在前往管理会员界面");
+        return "adminCenter";
+    }
 }
 
