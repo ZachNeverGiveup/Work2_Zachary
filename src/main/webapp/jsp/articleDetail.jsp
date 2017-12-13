@@ -91,7 +91,12 @@
             <div class="mdui-panel-item-body">
                 <div class="mdui-textfield">
                     <i class="icon ion-ios-chatboxes-outline mdui-icon  material-icons"></i>
-                    <label class="mdui-textfield-label">发表你的评论</label>
+                    <c:if test="${comments.size()>0}">
+                        <label class="mdui-textfield-label">发表你的评论</label>
+                    </c:if>
+                    <c:if test="${comments.size()<=0}">
+                        <label class="mdui-textfield-label">还没有评论，快来抢占沙发吧~</label>
+                    </c:if>
                     <textarea id="commentContent" class="mdui-textfield-input" type="text" maxlength="40"></textarea>
                 </div>
                 <button id="commentSubmit" class="mdui-btn mdui-color-theme-accent  mdui-ripple"><i class="icon ion-ios-paperplane-outline mdui-icon  material-icons"></i>提交</button>
@@ -138,7 +143,7 @@
         <a href="<%=basePath%>toArticleByUserId.do">
             <button  class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red" mdui-tooltip="{content: '个人中心', position: 'left'}"><i class="icon ion-ios-person-outline mdui-icon material-icons"></i></button>
         </a>
-        <a href="<%=basePath%>toArticleAll.do">
+        <a href="<%=basePath%>toArticleCenter.do?pageNow=1">
             <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" mdui-tooltip="{content: '回到首页', position: 'left'}"><i class="icon ion-ios-undo-outline mdui-icon mdui-fab-opened material-icons"></i></button>
         </a>
     </div>

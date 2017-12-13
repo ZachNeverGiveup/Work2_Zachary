@@ -103,6 +103,14 @@
         where a.articleuserid=u.userid
         ORDER  BY articlelastcommenttime DESC
     </select>
+    <select id="selectArticlesByPage" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        a.*,u.username
+        from article a,user u
+        where a.articleuserid=u.userid
+        ORDER  BY articlelastcommenttime DESC
+        limit #{pageStart},#{pageSize}
+    </select>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select
           a.*,u.username

@@ -32,9 +32,12 @@ public class ArticleController {
     @Autowired
     CommentServiceImpl commentService;
 
+    //日志记录
     private static Logger logger = LoggerFactory.getLogger(ArticleController.class);
     //传进来的文章ID乘以这个数，再除以这个数
     private Integer ARTICLE_ID_CHANGE_NUMBER = 271343;
+    //文章分页，每页显示的数量
+    private Integer PAGE_SIZE = 10;
 
     /**
      * 查找所有的文章，返回一个List<Article>到文章列表（即论坛首页）
@@ -45,6 +48,22 @@ public class ArticleController {
     public String toArticleAll(HttpServletRequest request){
        List<Article> arts= articleService.selectAllArticles();
         request.setAttribute("arts",arts);
+        return "article";
+    }
+    /**
+     * 根据每页显示的数量和当前页来查找文章，返回一个List<Article>到文章列表
+     * @param request
+     * @return
+     */
+    @RequestMapping("toArticleCenter.do")
+    public String toArticleByPage(HttpServletRequest request,Integer pageNow){
+        List<Article> arts= articleService.selectArticlesByPage(PAGE_SIZE,pageNow);
+        int rowCount=articleService.selectAllArticles().size();
+        int pageCount = rowCount%PAGE_SIZE==0?rowCount/PAGE_SIZE:rowCount/PAGE_SIZE+1;
+        request.setAttribute("arts",arts);
+        request.setAttribute("pageNow",pageNow);
+        request.setAttribute("rowCount",rowCount);
+        request.setAttribute("pageCount",pageCount);
         return "article";
     }
     /**

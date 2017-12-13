@@ -1,0 +1,909 @@
+2017-12-13 09:22:13,393 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 11628 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 09:22:13,455 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 09:22:13,455 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 09:22:21,190 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 8.266 seconds (JVM running for 10.897)
+2017-12-13 09:22:34,832 INFO (UserController.java:41)- 正在前往登录页面…………
+2017-12-13 09:22:39,175 INFO (UserController.java:67)- 正在检测用户手机号是否存在…………
+2017-12-13 09:22:39,225 INFO (UserController.java:68)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 09:22:39,583 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 09:22:39,615 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 09:22:39,630 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 09:22:39,630 ERROR (UserController.java:72)- 已存在
+2017-12-13 09:22:39,630 INFO (UserController.java:78)- 检测完成…………
+2017-12-13 09:22:41,757 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 09:22:41,758 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 09:22:41,760 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 09:22:41,762 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 09:22:41,763 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 09:22:41,764 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 09:22:41,766 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 09:22:41,766 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 09:22:41,768 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 09:22:41,769 INFO (UserController.java:163)- 登陆成功
+2017-12-13 09:22:41,769 INFO (UserController.java:164)- 重置用户密码输错次数……
+2017-12-13 09:22:41,770 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 09:22:41,770 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 09:22:41,845 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 09:22:41,845 INFO (UserController.java:167)- 用户密码输错次数已重置为0……
+2017-12-13 09:22:41,857 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 09:22:41,857 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 09:22:41,863 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 09:22:51,914 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-13 09:22:51,915 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 8(Integer)
+2017-12-13 09:22:51,919 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 09:22:51,920 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-13 09:22:51,922 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 8(Integer)
+2017-12-13 09:22:51,924 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-13 09:23:00,466 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 09:23:00,467 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 09:23:00,469 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 09:23:09,191 INFO (UserController.java:180)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 10:05:10,645 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 4788 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 10:05:10,654 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 10:05:10,654 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 10:07:05,795 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 11300 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 10:07:05,800 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 10:07:05,800 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 10:07:12,179 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.978 seconds (JVM running for 7.573)
+2017-12-13 10:07:17,426 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:07:17,987 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:07:22,121 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 10:07:22,123 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 10:07:22,571 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:07:22,610 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:07:22,627 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:07:22,629 ERROR (UserController.java:73)- 已存在
+2017-12-13 10:07:22,631 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 10:07:24,464 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:07:24,466 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:07:24,468 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:07:24,470 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 10:07:24,471 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 10:07:24,472 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:07:24,473 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 10:07:24,474 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:07:24,476 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:07:24,477 INFO (UserController.java:164)- 登陆成功
+2017-12-13 10:07:24,478 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 10:07:24,479 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 10:07:24,481 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:07:24,595 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 10:07:24,596 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 10:07:24,611 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 10:07:24,612 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:07:24,620 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 10:07:29,833 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 10:07:29,834 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 10:07:29,838 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:07:32,575 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 10:07:32,576 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 10:07:32,577 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 10:07:32,578 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:07:32,580 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 10:09:07,109 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 11068 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 10:09:07,116 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 10:09:07,119 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 10:09:13,051 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.578 seconds (JVM running for 7.347)
+2017-12-13 10:09:21,291 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:09:22,030 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:09:24,844 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 10:09:24,845 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 10:09:25,195 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:09:25,223 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:09:25,244 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:09:25,246 ERROR (UserController.java:73)- 已存在
+2017-12-13 10:09:25,247 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 10:09:27,019 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:09:27,020 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:09:27,021 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:09:27,024 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 10:09:27,025 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 10:09:27,027 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:09:27,029 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 10:09:27,029 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:09:27,031 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:09:27,032 INFO (UserController.java:164)- 登陆成功
+2017-12-13 10:09:27,032 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 10:09:27,033 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 10:09:27,034 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:09:27,157 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 10:09:27,158 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 10:09:27,177 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 10:09:27,178 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:09:27,187 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 10:09:29,827 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 10:09:29,828 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 10:09:29,832 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:09:32,511 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 10:09:32,511 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 10:09:32,513 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 10:09:32,514 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:09:32,516 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 10:12:48,432 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 8408 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 10:12:48,436 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 10:12:48,437 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 10:12:54,291 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.54 seconds (JVM running for 7.649)
+2017-12-13 10:12:59,139 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:12:59,559 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:13:02,555 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 10:13:02,557 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 10:13:02,911 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:13:02,941 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:13:02,952 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:13:02,954 ERROR (UserController.java:73)- 已存在
+2017-12-13 10:13:02,955 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 10:13:05,037 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:13:05,039 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:13:05,041 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:13:05,044 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 10:13:05,045 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 10:13:05,046 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:13:05,048 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 10:13:05,048 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:13:05,050 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:13:05,052 INFO (UserController.java:164)- 登陆成功
+2017-12-13 10:13:05,053 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 10:13:05,054 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 10:13:05,055 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:13:05,140 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 10:13:05,141 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 10:13:05,159 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 10:13:05,159 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:13:05,165 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 10:13:08,850 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 10:13:08,851 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 10:13:08,854 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:13:11,272 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 10:13:11,273 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 10:13:11,273 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 10:13:11,274 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:13:11,277 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 10:36:30,227 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 7936 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 10:36:30,233 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 10:36:30,233 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 10:36:35,776 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.237 seconds (JVM running for 7.407)
+2017-12-13 10:36:51,082 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:36:51,476 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:36:55,695 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 10:36:55,696 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 10:36:56,071 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:36:56,103 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:36:56,123 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:36:56,125 ERROR (UserController.java:73)- 已存在
+2017-12-13 10:36:56,126 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 10:36:57,830 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:36:57,831 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:36:57,833 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:36:57,835 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 10:36:57,836 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 10:36:57,838 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:36:57,840 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 10:36:57,841 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:36:57,843 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:36:57,844 INFO (UserController.java:164)- 登陆成功
+2017-12-13 10:36:57,844 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 10:36:57,844 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 10:36:57,845 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:36:57,917 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 10:36:57,918 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 10:36:57,930 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 10:36:57,931 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:36:57,936 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 10:37:00,589 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 10:37:00,591 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 10:37:00,595 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:37:02,810 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 10:37:02,811 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 10:37:02,812 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 10:37:02,813 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:37:02,815 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 10:37:37,500 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 10984 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 10:37:37,505 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 10:37:37,505 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 10:37:43,046 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.354 seconds (JVM running for 7.629)
+2017-12-13 10:37:47,259 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:37:47,590 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:37:51,086 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 10:37:51,088 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 10:37:51,451 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:37:51,480 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:37:51,499 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:37:51,501 ERROR (UserController.java:73)- 已存在
+2017-12-13 10:37:51,502 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 10:37:53,384 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:37:53,385 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:37:53,388 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:37:53,391 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 10:37:53,392 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 10:37:53,394 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:37:53,395 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 10:37:53,396 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:37:53,400 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:37:53,401 INFO (UserController.java:164)- 登陆成功
+2017-12-13 10:37:53,401 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 10:37:53,402 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 10:37:53,403 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:37:53,470 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 10:37:53,471 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 10:37:53,483 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 10:37:53,483 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:37:53,490 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 10:37:56,214 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 10:37:56,215 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 10:37:56,218 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:37:59,083 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 10:37:59,085 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 10:37:59,087 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 10:37:59,088 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:37:59,090 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 10:39:09,410 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 7688 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 10:39:09,423 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 10:39:09,423 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 10:39:15,634 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.886 seconds (JVM running for 7.682)
+2017-12-13 10:39:32,027 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:39:32,524 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:39:35,374 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 10:39:35,375 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 10:39:35,719 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:39:35,748 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:39:35,759 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:39:35,761 ERROR (UserController.java:73)- 已存在
+2017-12-13 10:39:35,761 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 10:39:37,653 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:39:37,654 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:39:37,656 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:39:37,658 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 10:39:37,659 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 10:39:37,661 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:39:37,663 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 10:39:37,664 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:39:37,667 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:39:37,668 INFO (UserController.java:164)- 登陆成功
+2017-12-13 10:39:37,669 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 10:39:37,670 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 10:39:37,671 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:39:37,750 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 10:39:37,751 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 10:39:37,767 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 10:39:37,768 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:39:37,776 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 10:39:40,613 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 10:39:40,615 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 10:39:40,620 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:39:43,109 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 10:39:43,110 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 10:39:43,111 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 10:39:43,112 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:39:43,115 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 10:42:45,373 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 4752 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 10:42:45,378 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 10:42:45,378 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 10:42:51,348 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.623 seconds (JVM running for 7.701)
+2017-12-13 10:42:59,320 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:42:59,393 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:43:05,206 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 10:43:05,208 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 10:43:05,575 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:43:05,603 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:43:05,621 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:43:05,624 ERROR (UserController.java:73)- 已存在
+2017-12-13 10:43:05,625 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 10:43:07,546 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:43:07,548 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:43:07,549 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:43:07,552 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 10:43:07,553 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 10:43:07,554 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:43:07,556 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 10:43:07,556 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:43:07,558 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:43:07,559 INFO (UserController.java:164)- 登陆成功
+2017-12-13 10:43:07,560 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 10:43:07,561 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 10:43:07,563 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:43:07,643 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 10:43:07,643 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 10:43:07,655 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 10:43:07,656 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:43:07,662 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 10:43:10,524 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 10:43:10,525 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 10:43:10,527 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:43:12,744 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 10:43:12,745 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 10:43:12,746 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 10:43:12,747 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:43:12,750 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 10:44:50,984 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 9408 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 10:44:50,989 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 10:44:50,990 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 10:44:56,808 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.562 seconds (JVM running for 7.294)
+2017-12-13 10:45:01,320 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:45:01,772 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:45:05,078 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 10:45:05,080 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 10:45:05,436 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:45:05,466 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:45:05,484 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:45:05,486 ERROR (UserController.java:73)- 已存在
+2017-12-13 10:45:05,487 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 10:45:07,007 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:45:07,008 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:45:07,011 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:45:07,014 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 10:45:07,015 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 10:45:07,016 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:45:07,018 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 10:45:07,020 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:45:07,023 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:45:07,024 INFO (UserController.java:164)- 登陆成功
+2017-12-13 10:45:07,025 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 10:45:07,026 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 10:45:07,027 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:45:07,120 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 10:45:07,122 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 10:45:07,152 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 10:45:07,153 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:45:07,163 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 10:45:09,428 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 10:45:09,430 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 10:45:09,434 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:45:12,260 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 10:45:12,261 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 10:45:12,262 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 10:45:12,263 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:45:12,266 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 10:51:45,069 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 11228 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 10:51:45,074 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 10:51:45,075 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 10:51:51,629 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 7.473 seconds (JVM running for 8.488)
+2017-12-13 10:52:29,897 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:52:30,740 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:52:34,651 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 10:52:34,651 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 10:52:34,980 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:52:35,008 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:52:35,027 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:52:35,029 ERROR (UserController.java:73)- 已存在
+2017-12-13 10:52:35,031 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 10:52:36,889 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:52:36,890 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:52:36,893 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:52:36,895 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 10:52:36,896 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 10:52:36,898 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:52:36,899 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 10:52:36,900 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:52:36,902 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:52:36,903 INFO (UserController.java:164)- 登陆成功
+2017-12-13 10:52:36,903 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 10:52:36,904 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 10:52:36,905 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:52:36,995 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 10:52:36,995 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 10:52:37,009 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 10:52:37,010 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:52:37,017 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 10:52:42,445 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 10:52:42,446 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 10:52:42,448 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:52:50,786 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 10:52:50,786 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 10:52:50,788 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 10:52:50,789 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:52:50,791 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 10:57:36,281 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 6564 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 10:57:36,287 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 10:57:36,288 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 10:57:42,471 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.82 seconds (JVM running for 7.896)
+2017-12-13 10:58:01,200 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:58:01,704 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 10:58:05,030 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 10:58:05,031 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 10:58:05,377 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:58:05,406 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:58:05,419 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:58:05,421 ERROR (UserController.java:73)- 已存在
+2017-12-13 10:58:05,422 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 10:58:08,285 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 10:58:08,286 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:58:08,290 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:58:08,293 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 10:58:08,294 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 10:58:08,296 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:58:08,298 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 10:58:08,299 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:58:08,301 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:58:08,302 INFO (UserController.java:164)- 登陆成功
+2017-12-13 10:58:08,302 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 10:58:08,303 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 10:58:08,303 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 10:58:08,405 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 10:58:08,405 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 10:58:08,420 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 10:58:08,421 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:58:08,425 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 10:58:12,053 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 10:58:12,054 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 10:58:12,058 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 10:58:15,604 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 10:58:15,604 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 10:58:15,606 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 10:58:15,608 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 10:58:15,610 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 11:00:50,429 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 7264 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 11:00:50,434 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 11:00:50,434 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 11:00:56,513 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.682 seconds (JVM running for 7.667)
+2017-12-13 11:01:03,787 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:01:04,180 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:01:07,554 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 11:01:07,556 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 11:01:07,903 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:01:07,930 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:01:07,946 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:01:07,948 ERROR (UserController.java:73)- 已存在
+2017-12-13 11:01:07,950 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 11:01:09,888 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:01:09,890 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:01:09,893 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:01:09,896 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 11:01:09,898 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 11:01:09,900 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:01:09,901 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 11:01:09,902 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:01:09,905 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:01:09,907 INFO (UserController.java:164)- 登陆成功
+2017-12-13 11:01:09,907 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 11:01:09,908 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 11:01:09,909 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:01:09,989 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 11:01:09,989 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 11:01:10,003 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 11:01:10,003 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:01:10,010 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 11:01:12,754 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 11:01:12,755 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 11:01:12,758 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:01:14,887 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 11:01:14,887 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 11:01:14,888 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 11:01:14,889 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:01:14,891 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 11:03:14,933 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 5636 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 11:03:14,938 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 11:03:14,938 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 11:03:20,775 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.619 seconds (JVM running for 7.6)
+2017-12-13 11:03:26,646 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:03:30,639 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 11:03:30,641 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 11:03:30,999 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:03:31,027 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:03:31,046 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:03:31,049 ERROR (UserController.java:73)- 已存在
+2017-12-13 11:03:31,050 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 11:03:32,873 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:03:32,875 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:03:32,878 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:03:32,881 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 11:03:32,882 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 11:03:32,884 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:03:32,886 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 11:03:32,887 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:03:32,890 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:03:32,891 INFO (UserController.java:164)- 登陆成功
+2017-12-13 11:03:32,891 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 11:03:32,892 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 11:03:32,893 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:03:32,957 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 11:03:32,958 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 11:03:32,974 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 11:03:32,974 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:03:32,982 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 11:03:35,630 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 11:03:35,632 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 11:03:35,634 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:03:38,031 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 11:03:38,032 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 11:03:38,032 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 11:03:38,033 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:03:38,036 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 11:03:58,342 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 8808 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 11:03:58,347 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 11:03:58,347 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 11:04:04,171 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.527 seconds (JVM running for 7.821)
+2017-12-13 11:04:12,921 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:04:13,004 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:04:16,305 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 11:04:16,306 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 11:04:16,643 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:04:16,671 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:04:16,682 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:04:16,683 ERROR (UserController.java:73)- 已存在
+2017-12-13 11:04:16,684 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 11:04:18,521 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:04:18,522 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:04:18,524 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:04:18,527 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 11:04:18,528 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 11:04:18,530 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:04:18,531 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 11:04:18,533 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:04:18,536 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:04:18,537 INFO (UserController.java:164)- 登陆成功
+2017-12-13 11:04:18,537 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 11:04:18,538 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 11:04:18,539 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:04:18,605 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 11:04:18,605 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 11:04:18,625 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 11:04:18,626 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:04:18,635 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 11:04:20,642 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 11:04:20,643 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 11:04:20,646 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:04:22,894 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 11:04:22,895 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 11:04:22,896 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 11:04:22,897 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:04:22,901 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 11:06:38,105 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 916 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 11:06:38,117 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 11:06:38,117 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 11:06:44,509 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 7.27 seconds (JVM running for 8.287)
+2017-12-13 11:06:49,293 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:06:49,599 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:06:53,810 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 11:06:53,812 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 11:06:54,160 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:06:54,187 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:06:54,198 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:06:54,199 ERROR (UserController.java:73)- 已存在
+2017-12-13 11:06:54,200 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 11:06:55,746 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:06:55,748 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:06:55,750 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:06:55,752 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 11:06:55,754 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 11:06:55,756 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:06:55,758 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 11:06:55,759 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:06:55,763 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:06:55,764 INFO (UserController.java:164)- 登陆成功
+2017-12-13 11:06:55,764 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 11:06:55,765 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 11:06:55,766 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:06:55,848 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 11:06:55,849 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 11:06:55,864 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 11:06:55,865 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:06:55,872 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 11:06:57,978 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 11:06:57,979 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 11:06:57,983 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:07:00,119 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 11:07:00,120 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 11:07:00,121 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 11:07:00,123 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:07:00,126 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 11:09:10,635 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 4864 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 11:09:10,643 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 11:09:10,643 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 11:09:16,845 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.793 seconds (JVM running for 7.802)
+2017-12-13 11:09:22,764 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:09:23,035 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:09:26,245 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 11:09:26,246 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 11:09:26,605 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:09:26,632 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:09:26,650 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:09:26,652 ERROR (UserController.java:73)- 已存在
+2017-12-13 11:09:26,654 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 11:09:28,334 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:09:28,335 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:09:28,338 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:09:28,341 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 11:09:28,342 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 11:09:28,344 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:09:28,346 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 11:09:28,347 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:09:28,349 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:09:28,350 INFO (UserController.java:164)- 登陆成功
+2017-12-13 11:09:28,351 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 11:09:28,352 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 11:09:28,352 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:09:28,418 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 11:09:28,419 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 11:09:28,431 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 11:09:28,431 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:09:28,439 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 11:09:30,779 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 11:09:30,780 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 11:09:30,783 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:09:32,709 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 11:09:32,710 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 11:09:32,711 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 11:09:32,712 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:09:32,714 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 11:10:52,418 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 4128 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 11:10:52,424 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 11:10:52,424 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 11:10:58,989 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 7.221 seconds (JVM running for 7.887)
+2017-12-13 11:11:05,078 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:11:05,127 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:11:07,948 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 11:11:07,949 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 11:11:08,301 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:11:08,329 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:11:08,348 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:11:08,350 ERROR (UserController.java:73)- 已存在
+2017-12-13 11:11:08,351 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 11:11:09,667 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:11:09,669 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:11:09,672 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:11:09,675 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 11:11:09,676 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 11:11:09,678 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:11:09,679 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 11:11:09,680 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:11:09,682 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:11:09,683 INFO (UserController.java:164)- 登陆成功
+2017-12-13 11:11:09,683 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 11:11:09,684 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 11:11:09,686 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:11:09,750 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 11:11:09,750 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 11:11:09,762 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 11:11:09,763 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:11:09,769 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 11:11:11,837 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 11:11:11,838 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 11:11:11,842 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:11:13,659 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 11:11:13,660 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 11:11:13,661 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 11:11:13,662 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:11:13,664 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 11:12:37,901 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 4676 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 11:12:37,906 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 11:12:37,907 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 11:12:43,900 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.688 seconds (JVM running for 7.999)
+2017-12-13 11:13:08,318 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:13:08,497 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:13:12,284 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 11:13:12,284 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 11:13:12,620 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:13:12,647 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:13:12,658 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:13:12,659 ERROR (UserController.java:73)- 已存在
+2017-12-13 11:13:12,660 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 11:13:14,517 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:13:14,519 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:13:14,521 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:13:14,524 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 11:13:14,525 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 11:13:14,526 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:13:14,527 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 11:13:14,528 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:13:14,530 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:13:14,531 INFO (UserController.java:164)- 登陆成功
+2017-12-13 11:13:14,531 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 11:13:14,532 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 11:13:14,533 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:13:14,645 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 11:13:14,646 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 11:13:14,661 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 11:13:14,663 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:13:14,669 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 11:13:17,512 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 11:13:17,512 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 11:13:17,514 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 11:13:17,515 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:13:17,517 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 11:17:47,639 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 1536 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 11:17:47,645 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 11:17:47,652 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 11:17:54,100 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 7.107 seconds (JVM running for 8.203)
+2017-12-13 11:18:00,300 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:18:00,602 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:18:03,345 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 11:18:03,346 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 11:18:03,688 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:18:03,716 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:18:03,734 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:18:03,736 ERROR (UserController.java:73)- 已存在
+2017-12-13 11:18:03,738 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 11:18:05,552 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:18:05,554 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:18:05,556 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:18:05,558 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 11:18:05,558 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 11:18:05,560 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:18:05,561 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 11:18:05,562 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:18:05,565 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:18:05,566 INFO (UserController.java:164)- 登陆成功
+2017-12-13 11:18:05,566 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 11:18:05,567 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 11:18:05,568 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:18:05,644 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 11:18:05,646 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 11:18:05,675 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 11:18:05,677 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:18:05,687 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 11:18:08,882 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 11:18:08,882 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 11:18:08,884 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 11:18:08,884 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:18:08,886 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 11:19:09,837 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 11200 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 11:19:09,842 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 11:19:09,843 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 11:19:15,767 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.636 seconds (JVM running for 7.779)
+2017-12-13 11:19:20,006 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:19:20,129 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:19:22,938 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 11:19:22,940 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 11:19:23,281 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:19:23,309 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:19:23,320 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:19:23,321 ERROR (UserController.java:73)- 已存在
+2017-12-13 11:19:23,322 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 11:19:25,194 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:19:25,195 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:19:25,197 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:19:25,200 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 11:19:25,201 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 11:19:25,203 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:19:25,204 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 11:19:25,205 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:19:25,208 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:19:25,209 INFO (UserController.java:164)- 登陆成功
+2017-12-13 11:19:25,209 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 11:19:25,211 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 11:19:25,212 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:19:25,290 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 11:19:25,290 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 11:19:25,310 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 11:19:25,311 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:19:25,319 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 11:19:32,897 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 11:19:32,898 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 11:19:32,900 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 11:19:32,901 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:19:32,902 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 11:20:16,584 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 7456 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-13 11:20:16,601 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-13 11:20:16,603 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-13 11:20:22,701 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.976 seconds (JVM running for 8.277)
+2017-12-13 11:20:30,957 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:20:31,038 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:20:34,351 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 11:20:34,352 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 11:20:34,722 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:20:34,750 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:20:34,764 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:20:34,766 ERROR (UserController.java:73)- 已存在
+2017-12-13 11:20:34,767 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 11:20:36,619 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:20:36,620 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:20:36,622 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:20:36,624 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 11:20:36,625 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 11:20:36,626 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:20:36,628 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 11:20:36,630 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:20:36,632 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:20:36,633 INFO (UserController.java:164)- 登陆成功
+2017-12-13 11:20:36,633 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 11:20:36,633 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 11:20:36,634 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:20:36,712 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 11:20:36,713 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 11:20:36,730 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 11:20:36,731 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:20:36,740 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 11:20:39,376 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 11:20:39,377 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 11:20:39,379 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 11:20:39,380 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:20:39,382 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 11:29:10,966 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:29:17,622 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:29:38,082 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 11:29:38,083 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 11:29:38,086 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:29:38,088 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:29:38,091 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:29:38,093 ERROR (UserController.java:73)- 已存在
+2017-12-13 11:29:38,094 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 11:29:46,173 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 11:29:46,174 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-13 11:29:46,176 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:29:46,179 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:29:46,185 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:29:46,188 ERROR (UserController.java:73)- 已存在
+2017-12-13 11:29:46,189 INFO (UserController.java:79)- 检测完成…………
+2017-12-13 11:29:49,471 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:29:49,472 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:29:49,475 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:29:49,477 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-13 11:29:49,478 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-13 11:29:49,479 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:29:49,481 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-13 11:29:49,482 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:29:49,484 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:29:49,485 INFO (UserController.java:164)- 登陆成功
+2017-12-13 11:29:49,486 INFO (UserController.java:165)- 重置用户密码输错次数……
+2017-12-13 11:29:49,487 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-13 11:29:49,488 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-13 11:29:49,530 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 11:29:49,530 INFO (UserController.java:168)- 用户密码输错次数已重置为0……
+2017-12-13 11:29:49,535 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 11:29:49,536 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:29:49,540 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 11:29:55,590 INFO (UserController.java:181)- 尊敬的联蔚论坛管理员正在前往管理会员界面
+2017-12-13 11:29:55,591 INFO (UserController.java:182)- 正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）
+2017-12-13 11:29:55,592 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where usergrade < 10 
+2017-12-13 11:29:55,593 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:29:55,595 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-13 11:30:20,982 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-13 11:30:20,985 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 8(Integer)
+2017-12-13 11:30:20,988 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:30:20,989 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-13 11:30:20,990 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 8(Integer)
+2017-12-13 11:30:20,992 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-13 11:30:59,635 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-13 11:30:59,636 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 7(Integer)
+2017-12-13 11:30:59,643 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:30:59,646 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-13 11:30:59,647 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 7(Integer)
+2017-12-13 11:30:59,650 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:31:13,202 INFO (CommentController.java:35)- 吃鸡17
+2017-12-13 11:31:13,275 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into comment ( commentcontent, commentuserid, commentarticleid, commenttime ) values ( ?, ?, ?, ? ) 
+2017-12-13 11:31:13,276 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 吃鸡(String), 1(Integer), 7(Integer), 2017-12-13 11:31:13.0(Timestamp)
+2017-12-13 11:31:13,317 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 11:31:13,318 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-13 11:31:13,319 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 7(Integer)
+2017-12-13 11:31:13,320 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:31:13,322 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update article SET articlecommentnum = ?, articlelastcommenttime = ? where articleid = ? 
+2017-12-13 11:31:13,324 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 2(Integer), 2017-12-13 11:31:13.0(Timestamp), 7(Integer)
+2017-12-13 11:31:13,384 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 11:31:14,412 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-13 11:31:14,414 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 7(Integer)
+2017-12-13 11:31:14,418 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:31:14,420 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-13 11:31:14,422 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 7(Integer)
+2017-12-13 11:31:14,427 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2017-12-13 11:31:36,068 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 11:31:36,069 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 11:31:36,074 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:31:44,784 INFO (ArticleController.java:80)- 传进来的articleid是：271343
+2017-12-13 11:31:44,785 INFO (ArticleController.java:82)- 改变之后的articleid是：1
+2017-12-13 11:31:44,786 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-13 11:31:44,787 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2017-12-13 11:31:44,790 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:32:06,447 INFO (ArticleController.java:95)- Article{articleid=1, articletitle='中金TMT联席主管田晓安加盟今日头条 出任副总裁', articlecontent='据雷帝触网公众号消息，中金TMT联席主管田晓安日前已加盟今日头条，出任今日头条副总裁。田晓安直接向今日头条创始人兼CEO张一鸣汇报。资料显示，田晓安曾经在中金公司工作过10年，担任董事总经理、TMT联席主管、金融投资机构主管等职务，更早期在花旗银行、港交所等单位工作。', articleaddtime=Wed Dec 13 11:32:06 CST 2017, articleuserid=1, articlecommentnum=null, articlelastcommenttime=null, user=null}
+2017-12-13 11:32:06,449 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update article SET articletitle = ?, articlecontent = ?, articleaddtime = ?, articleuserid = ? where articleid = ? 
+2017-12-13 11:32:06,451 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 中金TMT联席主管田晓安加盟今日头条 出任副总裁(String), 据雷帝触网公众号消息，中金TMT联席主管田晓安日前已加盟今日头条，出任今日头条副总裁。田晓安直接向今日头条创始人兼CEO张一鸣汇报。资料显示，田晓安曾经在中金公司工作过10年，担任董事总经理、TMT联席主管、金融投资机构主管等职务，更早期在花旗银行、港交所等单位工作。(String), 2017-12-13 11:32:06.0(Timestamp), 1(Integer), 1(Integer)
+2017-12-13 11:32:06,512 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-13 11:32:06,516 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-13 11:32:06,517 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-13 11:32:06,518 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:32:08,555 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-13 11:32:08,556 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2017-12-13 11:32:08,558 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:32:08,559 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-13 11:32:08,560 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2017-12-13 11:32:08,564 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 5
+2017-12-13 11:32:41,370 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-13 11:32:41,371 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-13 11:32:41,378 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-13 11:33:07,805 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-13 11:33:14,697 INFO (UserController.java:68)- 正在检测用户手机号是否存在…………
+2017-12-13 11:33:14,698 INFO (UserController.java:69)- userphoneuserphoneuserphoneuserphone15161182029
+2017-12-13 11:33:14,702 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-13 11:33:14,703 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String)
+2017-12-13 11:33:14,706 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-13 11:33:14,707 ERROR (UserController.java:73)- 已存在
+2017-12-13 11:33:14,707 INFO (UserController.java:79)- 检测完成…………

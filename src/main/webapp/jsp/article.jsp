@@ -42,7 +42,7 @@
     </style>
 </head>
 <body class="mdui-theme-primary-blue mdui-theme-accent-blue  mdui-color-grey-200"
-      style="height:1000px">
+      style="height:auto">
 <div class="mdui-appbar  mdui-appbar-fixed">
     <div class="mdui-toolbar mdui-color-theme">
         <a id="toggle" href="<%=basePath%>toLogin.do" class="mdui-btn mdui-btn-icon"  mdui-tooltip="{content: '重新登录'}"><i
@@ -73,7 +73,7 @@
 </div>
 <div class="col-md-1" style="margin-top: 100px"></div>
 <img src="/img/logo.jpg" alt="">
-<div class="mdui-container mdui-color-grey-50 col-md-11" style="margin-top: 100px;height:800px;">
+<div class="mdui-container mdui-color-grey-50 col-md-11" style="margin-top: 70px;margin-bottom:100px;height:auto">
        <%-- <a href="<%=basePath%>toAdd.do">
             <button id="ma"
                     class="mdui-fab mdui-fab-fixed  mdui-ripple" >
@@ -81,7 +81,7 @@
             </button>
         </a>--%>
     <div class="col-md-12 mdui-typo" style="margin-top: 100px">
-        <table class="mdui-table ">
+        <table class="mdui-table mdui-table-hoverable">
             <thead>
             <tr>
                 <th style="white-space: nowrap; text-align:center">文章标题</th>
@@ -140,8 +140,18 @@
 
 
     </div>
-           <div class="mdui-progress">
+           <div class="mdui-progress" >
                <div class="mdui-progress-indeterminate"></div>
+           </div>
+           <div class="mdui-btn-group mdui-typo" style="margin:0 auto">
+               <p style="font-weight: 300">当前为第${pageNow}/${pageCount}页，共有${rowCount}条文章</p>
+               <a href="<%=basePath%>toArticleAll.do"><button type="button" class="mdui-btn">显示全部</button></a>
+               <c:if test="${pageNow>1}">
+               <a href="<%=basePath%>toArticleCenter.do?pageNow=${pageNow-1}"><button type="button" class="mdui-btn mdui-btn-active" mdui-tooltip="{content: '上一页'}"><i class="icon ion-ios-arrow-left mdui-icon  material-icons"></i></button></a>
+               </c:if>
+               <c:if test="${pageNow!=pageCount}">
+               <a href="<%=basePath%>toArticleCenter.do?pageNow=${pageNow+1}"><button type="button" class="mdui-btn" mdui-tooltip="{content: '下一页'}"><i class="icon ion-ios-arrow-right mdui-icon  material-icons"></i></button></a>
+               </c:if>
            </div>
 </div>
 
@@ -173,28 +183,38 @@
         <i class="icon ion-ios-color-filter-outline mdui-icon material-icons mdui-fab-opened "></i>
     </button>
     <div class="mdui-fab-dial">
+        <c:if test="${user.usergrade>9}">
+            <a href="<%=basePath%>toManageUser.do">
+                <button id="userManage" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-light-green  " mdui-tooltip="{content: '会员管理', position: 'left'}"><i class="icon ion-person-stalker" aria-hidden="true"></i></button>
+            </a>
+        </c:if>
         <a href="<%=basePath%>toAddArticle.do">
             <button id="addArticle" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink " mdui-tooltip="{content: '写新文章', position: 'left'}"><i class="icon ion-ios-compose-outline" aria-hidden="true"></i></button>
         </a>
         <a href="<%=basePath%>toArticleByUserId.do">
             <button  class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red" mdui-tooltip="{content: '个人中心', position: 'left'}"><i class="icon ion-ios-person-outline mdui-icon material-icons"></i></button>
         </a>
-        <a href="<%=basePath%>toArticleAll.do">
+        <a href="<%=basePath%>toArticleCenter.do?pageNow=1">
             <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" mdui-tooltip="{content: '回到首页', position: 'left'}"><i class="icon ion-ios-undo-outline mdui-icon mdui-fab-opened material-icons"></i></button>
         </a>
     </div>
 </div>
+
 </body>
 <script src="<%=basePath%>js/bootstrap.min.js"
         type="text/javascript"></script>
 <script src="<%=basePath%>js/mdui.js"></script>
 <script src="<%=basePath%>js/jquery.min.js"></script>
+<script src="<%=basePath%>js/layer.js"></script>
 <script type="text/javascript">
     //欢迎提示
-    mdui.snackbar({
-        message: '欢迎来到联蔚论坛！',
-        position: 'top'
+    layer.ready(function(){
+        layer.msg('欢迎来到联蔚论坛');
     });
+    /*mdui.snackbar({
+        message: '欢迎来到联蔚论坛',
+        position: 'top'
+    });*/
     //编辑文章按钮
     function toEditArticle(id){
         var idAfter=id*271343;

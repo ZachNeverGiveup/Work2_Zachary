@@ -18,4 +18,22 @@
     from user 
      where userphone = #{userphone,jdbcType=VARCHAR} and userpassword = #{userpassword,jdbcType=VARCHAR}
   </select>
+    <select id="selectAllWhereGradeLessTen" resultType="com.connext.pojo.User">
+        select
+        userid,username,userphone,userpassword,usergrade
+        from user
+        where usergrade  &lt; 10
+    </select>
+    <update id="updateUserByPrimaryKey" parameterType="com.connext.pojo.User">
+        update user
+        <set >
+            <if test="username != null" >
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="usergrade != null" >
+                usergrade = #{usergrade,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where userid = #{userid,jdbcType=INTEGER}
+    </update>
 </mapper>

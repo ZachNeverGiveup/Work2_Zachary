@@ -10,6 +10,8 @@ import java.util.List;
 public interface ArticleService {
     //查找所有的文章
     List<Article> selectAllArticles();
+    //根据每页显示的数量和当前页来查找文章
+    List<Article> selectArticlesByPage(Integer PAGE_SIZE,Integer pageNow);
     //根据用户id查找所有文章
     List<Article> selectArticlesByUserId(Integer userId);
     //根据文章id查找文章的具体信息

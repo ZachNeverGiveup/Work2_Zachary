@@ -78,7 +78,22 @@
     </div>
 </div>
 <div class="col-md-2" style="margin-top: 100px"></div>
-
+<div class="mdui-fab-dial">
+    <c:if test="${user.usergrade>9}">
+        <a href="<%=basePath%>toManageUser.do">
+            <button id="userManage" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-light-green  " mdui-tooltip="{content: '会员管理', position: 'left'}"><i class="icon ion-person-stalker" aria-hidden="true"></i></button>
+        </a>
+    </c:if>
+    <a href="<%=basePath%>toAddArticle.do">
+        <button id="addArticle" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink " mdui-tooltip="{content: '写新文章', position: 'left'}"><i class="icon ion-ios-compose-outline" aria-hidden="true"></i></button>
+    </a>
+    <a href="<%=basePath%>toArticleByUserId.do">
+        <button  class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red" mdui-tooltip="{content: '个人中心', position: 'left'}"><i class="icon ion-ios-person-outline mdui-icon material-icons"></i></button>
+    </a>
+    <a href="<%=basePath%>toArticleCenter.do?pageNow=1">
+        <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" mdui-tooltip="{content: '回到首页', position: 'left'}"><i class="icon ion-ios-undo-outline mdui-icon mdui-fab-opened material-icons"></i></button>
+    </a>
+</div>
 <div class="col-md-1" style="margin-top: 100px"></div>
 
 

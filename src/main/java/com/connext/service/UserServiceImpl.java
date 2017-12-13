@@ -7,6 +7,8 @@ import com.connext.pojo.Userlog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
@@ -52,6 +54,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public Userlog selectUserlogByUserphone(String userphone) {
         return userlogMapper.selectByUserphone(userphone);
+    }
+
+    @Override
+    public List<User> selectAllUsersExpectAdmin() {
+        return userMapper.selectAllWhereGradeLessTen();
+    }
+
+    @Override
+    public void updateUserByPrimaryKey(User user) {
+        userMapper.updateUserByPrimaryKey(user);
     }
 
 }

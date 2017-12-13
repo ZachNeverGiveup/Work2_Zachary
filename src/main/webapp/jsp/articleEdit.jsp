@@ -81,7 +81,26 @@
     </div>
 </div>
 <div class="col-md-2" style="margin-top: 100px"></div>
+<div class="mdui-fab-wrapper" id="fab"  mdui-fab="{trigger: 'hover'}">
+    <button class="mdui-fab mdui-ripple mdui-color-theme">
+        <!-- 默认显示的图标 ion-ios-plus-empty-->
+        <i class="icon ion-ios-plus-empty mdui-icon material-icons"></i>
 
+        <!-- 在拨号菜单开始打开时，平滑切换到该图标，若不需要切换图标，则可以省略该元素 -->
+        <i class="icon ion-ios-color-filter-outline mdui-icon material-icons mdui-fab-opened "></i>
+    </button>
+    <div class="mdui-fab-dial">
+        <a href="<%=basePath%>toAddArticle.do">
+            <button id="addArticle" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink " mdui-tooltip="{content: '写新文章', position: 'left'}"><i class="icon ion-ios-compose-outline" aria-hidden="true"></i></button>
+        </a>
+        <a href="<%=basePath%>toArticleByUserId.do">
+            <button  class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red" mdui-tooltip="{content: '个人中心', position: 'left'}"><i class="icon ion-ios-person-outline mdui-icon material-icons"></i></button>
+        </a>
+        <a href="<%=basePath%>toArticleCenter.do?pageNow=1">
+            <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" mdui-tooltip="{content: '回到首页', position: 'left'}"><i class="icon ion-ios-undo-outline mdui-icon mdui-fab-opened material-icons"></i></button>
+        </a>
+    </div>
+</div>
 <div class="col-md-1" style="margin-top: 100px"></div>
 
 

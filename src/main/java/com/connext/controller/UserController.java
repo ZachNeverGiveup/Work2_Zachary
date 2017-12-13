@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -167,7 +168,7 @@ public class UserController {
             logger.info("用户密码输错次数已重置为0……");
             session.setAttribute("user", uu);
             session.setMaxInactiveInterval(3600);
-            return "redirect:toArticleAll.do";
+            return "redirect:toArticleCenter.do?pageNow=1";
         }
     }
 
@@ -176,9 +177,27 @@ public class UserController {
      * @return
      */
     @RequestMapping("toManageUser.do")
-    public String toManageUser(){
+    public String toManageUser(HttpServletRequest request){
         logger.info("尊敬的联蔚论坛管理员正在前往管理会员界面");
+        logger.info("正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）");
+        //查询等级小于10的账号，原因是管理员本身不能管理自己
+        List<User> users = userService.selectAllUsersExpectAdmin();
+        request.setAttribute("users",users);
         return "adminCenter";
+    }
+    /**
+     * editUser.do
+     * 修改用户信息
+     */
+    @RequestMapping("editUser.do")
+    @ResponseBody
+    public void editUser(Integer userid,String username,Integer usergrade){
+        logger.info("接收到的用户id是："+userid+username+usergrade);
+        User user = new User();
+        user.setUserid(userid);
+        user.setUsername(username);
+        user.setUsergrade(usergrade);
+        userService.updateUserByPrimaryKey(user);
     }
 }
 

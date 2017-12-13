@@ -81,7 +81,7 @@
             </button>
         </a>--%>
     <div class="col-md-8 mdui-typo" style="margin-top: 100px">
-        <table class="mdui-table ">
+        <table class="mdui-table mdui-table-hoverable">
             <thead>
             <tr>
                 <th style="white-space: nowrap; text-align:center">文章标题</th>
@@ -172,7 +172,7 @@
         <a href="<%=basePath%>toArticleByUserId.do">
             <button  class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red" mdui-tooltip="{content: '个人中心', position: 'left'}"><i class="icon ion-ios-person-outline mdui-icon material-icons"></i></button>
         </a>
-        <a href="<%=basePath%>toArticleAll.do">
+        <a href="<%=basePath%>toArticleCenter.do?pageNow=1">
             <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" mdui-tooltip="{content: '回到首页', position: 'left'}"><i class="icon ion-ios-undo-outline mdui-icon mdui-fab-opened material-icons"></i></button>
         </a>
     </div>

@@ -72,7 +72,6 @@
 
 </div>
 <div class="col-md-1" style="margin-top: 100px"></div>
-<img src="/img/logo.jpg" alt="">
 <div class="mdui-container mdui-color-grey-50 col-md-10" style="margin-top: 100px;height:800px;">
        <%-- <a href="<%=basePath%>toAdd.do">
             <button id="ma"
@@ -89,37 +88,36 @@
                 <th style=" white-space: nowrap; text-align:center" class="mdui-table-col-numeric">会员电话</th>
                 <th style=" white-space: nowrap; text-align:center" class="mdui-table-col-numeric">会员等级</th>
                 <th style=" white-space: nowrap; text-align:center" class="mdui-table-col-numeric">编辑</th>
-                <th style=" white-space: nowrap; text-align:center" class="mdui-table-col-numeric">删除</th>
+                <%--<th style=" white-space: nowrap; text-align:center" class="mdui-table-col-numeric">删除</th>--%>
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${articles}" var="article">
+            <c:forEach items="${users}" var="user">
                 <tr class="mdui-table-row-selected">
-                    <td style="width:100px; white-space: nowrap; text-align:center"  mdui-tooltip="{content: '点击查看详情'}"><a href="<%=basePath%>articleDetail.do?id=${article.articleid}">${article.articletitle}</a></td>
-                    <td class="msgdate" style="width:100px; white-space: nowrap; text-align:center" mdui-tooltip="{content: '这篇文章的发表时间'}"><fmt:formatDate value="${article.articleaddtime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
-                    <td style="width: 10px;  text-align:center"  mdui-tooltip="{content: '这篇文章的评论数'}">${article.articlecommentnum}</td>
-                    <td class="msgdate" style="width:100px; white-space: nowrap; text-align:center" mdui-tooltip="{content: '最后评论时间'}"><fmt:formatDate value="${article.articlelastcommenttime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
-                        <%--<td style="white-space: nowrap"  mdui-tooltip="{content: '点击按钮查看该消息详情'}">
-                        <button id="mm"
-                                class="mdui-fab mdui-fab-fixed  mdui-ripple"
-                                onclick="moreMsg(${msg.msgid},this)">
-                            查看详情
-                        </button>
-                    </td>--%>
-                        <td style="white-space: nowrap" mdui-tooltip="{content: '点击按钮对该消息进行编辑'}">
+                    <td style="width:100px; white-space: nowrap; text-align:center"  mdui-tooltip="{content: '这是会员在数据库中的编号'}">${user.userid}</td>
+                    <td style="width:100px; white-space: nowrap; text-align:center" mdui-tooltip="{content: '点击进入这个用户的个人主页进行管理'}"><a href="#">${user.username}</a></td>
+                    <td style="width:100px; text-align:center"  mdui-tooltip="{content: '这个用户的手机号，请不要泄露用户隐私信息'}">${user.userphone}</td>
+                    <td style="width:100px; white-space: nowrap; text-align:center" mdui-tooltip="{content: '用户等级'}">
+                        <c:if test="${user.usergrade==0}">普通用户</c:if>
+                        <c:if test="${user.usergrade==1}">会员用户</c:if>
+                        <c:if test="${user.usergrade==2}">尊贵会员</c:if>
+                        <c:if test="${user.usergrade==3}">超级会员</c:if>
+                        <c:if test="${user.usergrade>3}">超级管理员</c:if>
+                    </td>
+                    <td style="white-space: nowrap" mdui-tooltip="{content: '点击按钮对该用户进行编辑'}">
                                 <button id="me"
                                         class="mdui-btn mdui-color-green mdui-ripple"
-                                        onclick="toEditArticle(${article.articleid})">
+                                        onclick="toEditUser(${user.userid},'${user.username}',${user.userphone},${user.usergrade})">
                                     编辑
                                 </button>
                         </td>
-                        <td style="white-space: nowrap;  "  mdui-tooltip="{content: '点击按钮删除该消息'}">
+                        <%--<td style="white-space: nowrap;  "  mdui-tooltip="{content: '点击按钮删除该消息'}">
                             <button id="md"
                                     class="mdui-btn mdui-color-red mdui-ripple"
                                     onclick="delAd(${article.articleid},this)">
                                 删除
                             </button>
-                        </td>
+                        </td>--%>
                 </tr>
             </c:forEach>
             </tbody>
@@ -133,7 +131,7 @@
 </div>
 <div class="col-md-2" style="margin-top: 100px"></div>
 
-
+<!--   以下是模态框以下是模态框以下是模态框以下是模态框以下是模态框以下是模态框以下是模态框以下是模态框    -->
 <div class="mdui-dialog" id="dialog">
     <div class="mdui-dialog-title">你确定要删除吗?</div>
     <div class="mdui-dialog-content">你将会失去这条消息的所有信息！</div>
@@ -142,16 +140,40 @@
         <button id="dc" class="mdui-btn mdui-ripple mdui-color-blue" mdui-dialog-confirm>确定</button>
     </div>
 </div>
-<div class="mdui-dialog" id="dialog2">
-    <div class="mdui-dialog-title">
-        <h1 class="mdui-text-color-blue"  style="text-align: middle" id="messageTitle"></h1>
-        <h4 class="mdui-text-color-grey"  style="text-align: middle" id="messageDate"></h4>
+
+<div class="mdui-dialog" id="editDialog">
+    <div class="mdui-textfield mdui-textfield-floating-label" id="usernameDia">
+        <i class="icon ion-ios-person mdui-icon material-icons"></i>
+        <label class="mdui-textfield-label">你可以在此修改用户名</label>
+        <input id="usernameDialog" class="mdui-textfield-input"/>
     </div>
-    <div class="mdui-dialog-content"><h2 class="mdui-text-color-black"  id="messageContent"></h2></div>
+    <h4>用户手机号：<mark id="userphoneDialog"> </mark></h4>
+    <div class="mdui-container mdui-valign" style="height: auto">
+        <h4>用户等级：</h4>
+        <select id="usergradeDialog" class="mdui-select" mdui-select>
+            <option value="0">普通用户</option>
+            <option value="1">会员用户</option>
+            <option value="2">尊贵会员</option>
+            <option value="3">超级会员</option>
+            <option value="10" disabled>超级管理员</option>
+        </select>
+        <%--<select id="usergradeDialog" class="mdui-select" mdui-select>
+            <option value="0" mdui-tooltip="{content: '此等级用户啥权限也没有'}">普通用户</option>
+            <option value="1" mdui-tooltip="{content: '会员用户将拥有编辑他人文章的权限'}">会员用户</option>
+            <option value="2" mdui-tooltip="{content: '尊贵会员将拥有删除他人文章的权限'}">尊贵会员</option>
+            <option value="3" mdui-tooltip="{content: '超级会员将同时拥有编辑和删除他人文章的权限'}">超级会员</option>
+            <option value="10" mdui-tooltip="{content: '你不可将其设置为超级管理员'}" disabled>超级管理员</option>
+        </select>--%>
+    </div>
     <div class="mdui-dialog-actions">
-        <button class="mdui-btn mdui-ripple" mdui-dialog-cancel>关闭</button>
+        <button class="mdui-btn mdui-ripple" mdui-dialog-cancel>算了</button>
+        <button id="ec" class="mdui-btn mdui-ripple mdui-color-blue" mdui-dialog-confirm>确定</button>
     </div>
 </div>
+
+<!-- 以上是模态框 以上是模态框以上是模态框以上是模态框以上是模态框以上是模态框-->
+
+<!-- 以下是右下角的浮动按钮 -->
 <div class="mdui-fab-wrapper" id="fab"  mdui-fab="{trigger: 'hover'}">
     <button class="mdui-fab mdui-ripple mdui-color-theme">
         <!-- 默认显示的图标 ion-ios-plus-empty-->
@@ -172,7 +194,7 @@
         <a href="<%=basePath%>toArticleByUserId.do">
             <button  class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red" mdui-tooltip="{content: '个人中心', position: 'left'}"><i class="icon ion-ios-person-outline mdui-icon material-icons"></i></button>
         </a>
-        <a href="<%=basePath%>toArticleAll.do">
+        <a href="<%=basePath%>toArticleCenter.do?pageNow=1">
             <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" mdui-tooltip="{content: '回到首页', position: 'left'}"><i class="icon ion-ios-undo-outline mdui-icon mdui-fab-opened material-icons"></i></button>
         </a>
     </div>
@@ -182,6 +204,7 @@
         type="text/javascript"></script>
 <script src="<%=basePath%>js/mdui.js"></script>
 <script src="<%=basePath%>js/jquery.min.js"></script>
+<script src="<%=basePath%>js/layer.js"></script>
 <script type="text/javascript">
     //欢迎提示
     mdui.snackbar({
@@ -189,55 +212,31 @@
         position: 'top'
     });
     //编辑文章按钮
-   function toEditArticle(id){
-       var idAfter=id*271343;
-       window.location='toEditArticle.do?articleid='+idAfter;
-    }
-    //删除新闻
-    function delAd(id,_this) {
-        var _this=$(_this);
-        new mdui.Dialog('#dialog').open();
-        $('#dc').click(function () {
-            $.post("<%=basePath%>articleDel.do",
-                    {
-                        articleid:id,
-                    },
-                    function(data,status){
-                        mdui.snackbar({
-                            message: '删除成功！',
-                            position: 'top'
-                        });
-                        console.log($(this).parents(".mdui-table-row-selected"));
-                        _this.parents(".mdui-table-row-selected").remove();
-                    });
-        });
-    }
-    //查看消息
-    function formatDate(now)
-    {
-        var year=now.getYear()+1900;
-        var month=now.getMonth()+1;
-        var date=now.getDate();
-        var hour=now.getHours();
-        var minute=now.getMinutes();
-        var second=now.getSeconds();
-        return year+"年"+month+"月"+date+"日  "+hour+":"+minute+":"+second;
-    }
+   function toEditUser(id,name,phone,grade){
+       /*/!*var username=name;*!/
+       var userphone=phone;
+       var usergrade=grade;*/
+       new mdui.Dialog('#editDialog').open();
+       $("#usernameDialog").val(name);
+       $("#userphoneDialog").text(phone);
+       $("#usergradeDialog").val(grade);
+       $("#ec").click(function () {
+           $.post("<%=basePath%>editUser.do",
+                   {
+                       userid:id,
+                       username:$("#usernameDialog").val(),
+                       usergrade:$("#usergradeDialog").val(),
+                   },
+                   function(data,status){
+                       mdui.snackbar({
+                           message: '修改成功！',
+                           position: 'top'
+                       });
+                       setTimeout(function(){window.location='toManageUser.do'},800);
+                   });
+       })
+    };
 
-    function moreMsg(id,_this) {
-        var _this=$(_this);
 
-        $.post("<%=basePath%>msgMore.do",
-                {
-                    msgid:id,
-                },
-                function(data,status){
-                    new mdui.Dialog('#dialog2').open();
-                    $("#messageTitle").text(data.msgtitle);
-                    $("#messageContent").text(data.msgcontent);
-                    var d=new Date(data.msgdate);
-                    $("#messageDate").text(formatDate(d));
-                });
-    }
 </script>
 </html>

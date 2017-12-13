@@ -22,6 +22,8 @@ public interface ArticleMapper {
 
     List<Article> selectAllArticles();
 
+    List<Article> selectArticlesByPage(@Param("pageStart") Integer pageStart,@Param("pageSize") Integer PageSize);
+
     List<Article> selectByUserId(Integer articleuserid);
 
     Article selectByPrimaryKey(Integer articleid);

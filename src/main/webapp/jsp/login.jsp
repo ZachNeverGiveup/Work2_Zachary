@@ -98,13 +98,18 @@ a:active {
 	type="text/javascript"></script>
 <script src="/js/mdui.js"></script>
 <script src="/js/jquery.min.js"></script>
+<script src="/js/layer.js"></script>
 <script type="text/javascript">
 //手机号码离焦事件，先判断是否符合正确的手机号码格式，再判断是否已经存在
 $('#up').blur(function () {
 	var myreg1 = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
 	var myreg2 = /(1[3-9]\d{9}$)/;
-	 if (!myreg2.test($('#up').val())){ 
-			alert("手机号码格式不正确！"); 
+	 if (!myreg2.test($('#up').val())){
+		 layer.msg('手机号码格式不正确！');
+		 mdui.snackbar({
+			 message: '手机号码格式不正确！',
+			 position: 'top'
+		 });
 			//$("#moileMsg").html("<font color='red'>手机号码格式不正确！请重新输入！</font>"); 
 			$('#up').focus();  
 	}else{  

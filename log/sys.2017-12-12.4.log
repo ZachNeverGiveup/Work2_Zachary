@@ -1,0 +1,48 @@
+2017-12-12 17:45:44,351 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 8(Integer)
+2017-12-12 17:45:44,358 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-12 17:46:15,406 INFO (ArticleController.java:95)- Article{articleid=8, articletitle='贾跃亭被北京市第三中级人民法院失信被执行人', articlecontent='据中国执行信息网公告显示，贾跃亭因违反财产报告制度，未全部履行生效法律文书确定的义务，被列入失信被执行人。根据法院公开被执行人信息显示，贾跃亭未履行生效法律文书确定的义务包括以下内容：一、向平安证券股份有限公司支付初始交易金额人民币462 100 000元。二、向平安证券股份有限公司支付利息4 149 847.77元。三、 向平安证券股份有限公司支付违约金，以对应的购回交易金额为基数，按照日万分之五的比率，计至贾跃亭实际清偿之日止，暂计至2017年6月27日为9 098 872.03元。四、向平安证券股份有限公司支付执行证书公证费人民币1 426 046元，律师费人民币2 560 000元。（新浪财经）', articleaddtime=Tue Dec 12 17:46:15 CST 2017, articleuserid=2, articlecommentnum=null, articlelastcommenttime=null, user=null}
+2017-12-12 17:46:15,501 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update article SET articletitle = ?, articlecontent = ?, articleaddtime = ?, articleuserid = ? where articleid = ? 
+2017-12-12 17:46:15,502 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 贾跃亭被北京市第三中级人民法院失信被执行人(String), 据中国执行信息网公告显示，贾跃亭因违反财产报告制度，未全部履行生效法律文书确定的义务，被列入失信被执行人。根据法院公开被执行人信息显示，贾跃亭未履行生效法律文书确定的义务包括以下内容：一、向平安证券股份有限公司支付初始交易金额人民币462 100 000元。二、向平安证券股份有限公司支付利息4 149 847.77元。三、 向平安证券股份有限公司支付违约金，以对应的购回交易金额为基数，按照日万分之五的比率，计至贾跃亭实际清偿之日止，暂计至2017年6月27日为9 098 872.03元。四、向平安证券股份有限公司支付执行证书公证费人民币1 426 046元，律师费人民币2 560 000元。（新浪财经）(String), 2017-12-12 17:46:15.0(Timestamp), 2(Integer), 8(Integer)
+2017-12-12 17:46:15,546 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-12 17:46:15,554 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-12 17:46:15,554 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3(Integer), 3(Integer)
+2017-12-12 17:46:15,556 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-12 17:46:18,056 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-12 17:46:18,057 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-12 17:46:18,063 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-12 17:47:23,227 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-12 17:47:23,230 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3(Integer), 3(Integer)
+2017-12-12 17:47:23,232 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-12 17:47:29,587 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-12 17:47:29,588 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-12 17:47:29,593 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-12 17:47:30,963 INFO (UserController.java:41)- 正在前往登录页面…………
+2017-12-12 17:47:39,089 INFO (UserController.java:67)- 正在检测用户手机号是否存在…………
+2017-12-12 17:47:39,090 INFO (UserController.java:68)- userphoneuserphoneuserphoneuserphone13867675555
+2017-12-12 17:47:39,093 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-12 17:47:39,095 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-12 17:47:39,098 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-12 17:47:39,099 ERROR (UserController.java:72)- 已存在
+2017-12-12 17:47:39,100 INFO (UserController.java:78)- 检测完成…………
+2017-12-12 17:47:41,429 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-12 17:47:41,430 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-12 17:47:41,431 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-12 17:47:41,432 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-12 17:47:41,433 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-12 17:47:41,434 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-12 17:47:41,435 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-12 17:47:41,436 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-12 17:47:41,438 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-12 17:47:41,439 INFO (UserController.java:163)- 登陆成功
+2017-12-12 17:47:41,439 INFO (UserController.java:164)- 重置用户密码输错次数……
+2017-12-12 17:47:41,440 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-12 17:47:41,441 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13867675555(String)
+2017-12-12 17:47:41,572 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-12 17:47:41,573 INFO (UserController.java:167)- 用户密码输错次数已重置为0……
+2017-12-12 17:47:41,581 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-12 17:47:41,582 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-12 17:47:41,585 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 7
+2017-12-12 17:47:46,010 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-12 17:47:46,010 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 1(Integer)
+2017-12-12 17:47:46,012 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-12 17:47:52,859 INFO (UserController.java:180)- 尊敬的联蔚论坛管理员正在前往管理会员界面
