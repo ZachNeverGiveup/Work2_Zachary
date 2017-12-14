@@ -141,22 +141,47 @@
     </div>
 </div>
 
-<div class="mdui-dialog" id="editDialog">
-    <div class="mdui-textfield mdui-textfield-floating-label" id="usernameDia">
+<div class="mdui-dialog" id="editDialog" destroyOnClosed>
+    <div class="mdui-textfield" id="usernameDia">
         <i class="icon ion-ios-person mdui-icon material-icons"></i>
         <label class="mdui-textfield-label">你可以在此修改用户名</label>
         <input id="usernameDialog" class="mdui-textfield-input"/>
     </div>
-    <h4>用户手机号：<mark id="userphoneDialog"> </mark></h4>
     <div class="mdui-container mdui-valign" style="height: auto">
+        <h4>用户手机号：<mark id="userphoneDialog"> </mark></h4>
+    </div>
+    <div class="mdui-container mdui-valign" style="height: auto;width: auto">
         <h4>用户等级：</h4>
-        <select id="usergradeDialog" class="mdui-select" mdui-select>
-            <option value="0">普通用户</option>
-            <option value="1">会员用户</option>
-            <option value="2">尊贵会员</option>
-            <option value="3">超级会员</option>
-            <option value="10" disabled>超级管理员</option>
-        </select>
+        <div>
+        <div class="col-md-3">
+            <label class="mdui-radio" mdui-tooltip="{content: '只具有增删改查自己的文章的权限以及查看他人文章的权限'}">
+                <input type="radio" name="usergradeDialog" value="0"/>
+                <i class="mdui-radio-icon"></i>
+                普通用户
+            </label>
+        </div>
+        <div class="col-md-3">
+        <label class="mdui-radio" mdui-tooltip="{content: '具有增删改查自己的文章的权限以及查看、编辑他人文章的权限以及黄色昵称'}">
+            <input type="radio" name="usergradeDialog" value="1"/>
+            <i class="mdui-radio-icon"></i>
+            会员用户
+        </label>
+        </div>
+        <div class="col-md-3">
+        <label class="mdui-radio" mdui-tooltip="{content: '具有增删改查自己的文章的权限以及查看、删除他人文章的权限以及红色昵称'}">
+            <input type="radio" name="usergradeDialog" value="2"/>
+            <i class="mdui-radio-icon"></i>
+            尊贵会员
+        </label>
+        </div>
+        <div class="col-md-3">
+        <label class="mdui-radio" mdui-tooltip="{content: '具有增删改查自己的文章的权限以及查看、编辑、删除他人文章的权限以及金色昵称'}">
+            <input type="radio" name="usergradeDialog" value="3"/>
+            <i class="mdui-radio-icon"></i>
+            超级会员
+        </label>
+        </div>
+        </div>
         <%--<select id="usergradeDialog" class="mdui-select" mdui-select>
             <option value="0" mdui-tooltip="{content: '此等级用户啥权限也没有'}">普通用户</option>
             <option value="1" mdui-tooltip="{content: '会员用户将拥有编辑他人文章的权限'}">会员用户</option>
@@ -204,12 +229,11 @@
         type="text/javascript"></script>
 <script src="<%=basePath%>js/mdui.js"></script>
 <script src="<%=basePath%>js/jquery.min.js"></script>
-<script src="<%=basePath%>js/layer.js"></script>
+<script src="<%=basePath%>layer/layer.js"></script>
 <script type="text/javascript">
     //欢迎提示
-    mdui.snackbar({
-        message: '欢迎进入个人中心！',
-        position: 'top'
+    layer.ready(function(){
+        layer.msg('欢迎来到个人中心', {anim: 4});
     });
     //编辑文章按钮
    function toEditUser(id,name,phone,grade){
@@ -219,19 +243,16 @@
        new mdui.Dialog('#editDialog').open();
        $("#usernameDialog").val(name);
        $("#userphoneDialog").text(phone);
-       $("#usergradeDialog").val(grade);
+       $("input[type='radio'][name='usergradeDialog']").eq(grade).attr("checked",true);
        $("#ec").click(function () {
            $.post("<%=basePath%>editUser.do",
                    {
                        userid:id,
                        username:$("#usernameDialog").val(),
-                       usergrade:$("#usergradeDialog").val(),
+                       usergrade:$("input:radio[name='usergradeDialog']:checked").val(),
                    },
                    function(data,status){
-                       mdui.snackbar({
-                           message: '修改成功！',
-                           position: 'top'
-                       });
+                       layer.msg('修改成功！', {anim: 4});
                        setTimeout(function(){window.location='toManageUser.do'},800);
                    });
        })

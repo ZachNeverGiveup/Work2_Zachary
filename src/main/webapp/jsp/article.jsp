@@ -103,7 +103,12 @@
             %>
             <c:forEach items="<%=articles%>" var="article">
                 <tr class="mdui-table-row-selected">
-                    <td style="width:100px; white-space: nowrap; text-align:center"  mdui-tooltip="{content: '点击查看详情'}"><a href="<%=basePath%>articleDetail.do?id=${article.articleid}">${article.articletitle}</a></td>
+                    <td style="width:100px; white-space: nowrap; text-align:center"  mdui-tooltip="{content: '点击查看详情'}">
+                        <c:if test="${article.articlecommentnum>5}">
+                            <i class="icon ion-fireball mdui-text-color-red"></i>
+                        </c:if>
+                        <a href="<%=basePath%>articleDetail.do?id=${article.articleid}">${article.articletitle}</a>
+                    </td>
                     <td style="width:100px; white-space: nowrap; text-align:center"  mdui-tooltip="{content: '这篇文章的作者'}">${article.user.username}</td>
                     <td class="msgdate" style="width:100px; white-space: nowrap; text-align:center" mdui-tooltip="{content: '这篇文章的发表时间'}"><fmt:formatDate value="${article.articleaddtime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                     <td style="width:100px; white-space: nowrap; text-align:center"  mdui-tooltip="{content: '这篇文章的评论数'}">${article.articlecommentnum}</td>
@@ -152,6 +157,7 @@
                <c:if test="${pageNow!=pageCount}">
                <a href="<%=basePath%>toArticleCenter.do?pageNow=${pageNow+1}"><button type="button" class="mdui-btn" mdui-tooltip="{content: '下一页'}"><i class="icon ion-ios-arrow-right mdui-icon  material-icons"></i></button></a>
                </c:if>
+               <button class="mdui-btn mdui-color-light-blue-100  mdui-ripple" id="example-prompt-1">跳到指定页</button>
            </div>
 </div>
 
@@ -166,8 +172,8 @@
 </div>
 <div class="mdui-dialog" id="dialog2">
     <div class="mdui-dialog-title">
-        <h1 class="mdui-text-color-blue"  style="text-align: middle" id="messageTitle"></h1>
-        <h4 class="mdui-text-color-grey"  style="text-align: middle" id="messageDate"></h4>
+        <h1 class="mdui-text-color-blue"  style="text-align: center" id="messageTitle"></h1>
+        <h4 class="mdui-text-color-grey"  style="text-align: center" id="messageDate"></h4>
     </div>
     <div class="mdui-dialog-content"><h2 class="mdui-text-color-black"  id="messageContent"></h2></div>
     <div class="mdui-dialog-actions">
@@ -205,11 +211,11 @@
         type="text/javascript"></script>
 <script src="<%=basePath%>js/mdui.js"></script>
 <script src="<%=basePath%>js/jquery.min.js"></script>
-<script src="<%=basePath%>js/layer.js"></script>
+<script src="<%=basePath%>layer/layer.js"></script>
 <script type="text/javascript">
     //欢迎提示
     layer.ready(function(){
-        layer.msg('欢迎来到联蔚论坛');
+        layer.msg('欢迎来到联蔚论坛', {anim: 4});
     });
     /*mdui.snackbar({
         message: '欢迎来到联蔚论坛',
@@ -220,6 +226,17 @@
         var idAfter=id*271343;
         window.location='toEditArticle.do?articleid='+idAfter;
     }
+    //跳到指定页
+    $('#example-prompt-1').on('click', function () {
+        mdui.prompt('请输入你想跳到的页码',
+                function (value) {
+                    setTimeout(function () {
+                        window.location='toArticleCenter.do?pageNow='+value;
+                    },500)
+                }
+        );
+    });
+
     //删除新闻
     function delAd(id,_this) {
         var _this=$(_this);
@@ -230,10 +247,7 @@
                         articleid:id,
                     },
                     function(data,status){
-                        mdui.snackbar({
-                            message: '删除成功！',
-                            position: 'top'
-                        });
+                        layer.msg('删除成功', {anim: 4});
                         console.log($(this).parents(".mdui-table-row-selected"));
                         _this.parents(".mdui-table-row-selected").remove();
                     });

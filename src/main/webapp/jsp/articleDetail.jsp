@@ -101,13 +101,23 @@
                 </div>
                 <button id="commentSubmit" class="mdui-btn mdui-color-theme-accent  mdui-ripple"><i class="icon ion-ios-paperplane-outline mdui-icon  material-icons"></i>提交</button>
                 <c:forEach items="${comments}" var="comment" varStatus="status">
-                    <div class="mdui-panel-item  mdui-panel-item-open  mdui-color-blue-grey-100">
+                    <div class="commentdiv mdui-panel-item  mdui-panel-item-open  mdui-color-blue-grey-100">
                         <div class="mdui-panel-item-header">
                             <div class="mdui-chip">
                                 <input class="hiddenusername" type="hidden" value="${comment.user.username}"/>
-                                <span class="mdui-chip-icon mdui-color-blue"><i class="icon ion-ios-chatboxes-outline mdui-icon  material-icons"></i></span>
-                                <span class="mdui-chip-title">联蔚科技用户：${comment.user.username}&nbsp;于<fmt:formatDate value="${comment.commenttime}" pattern="yyyy-MM-dd HH:mm:ss"/>发表</span>
+                                <span class="mdui-chip-icon mdui-color-blue"><i class="icon ion-social-snapchat-outline mdui-icon  material-icons"></i></span>
+                                <span class="mdui-chip-title">联蔚科技
+                                    <c:if test="${comment.user.usergrade==0}">普通用户：${comment.user.username}</c:if>
+                                    <c:if test="${comment.user.usergrade==1}">会员用户：<span class="mdui-text-color-yellow">${comment.user.username}</span></c:if>
+                                    <c:if test="${comment.user.usergrade==2}">尊贵会员：<span class="mdui-text-color-red">${comment.user.username}</span></c:if>
+                                    <c:if test="${comment.user.usergrade==3}">超级会员：<span class="mdui-text-color-deep-orange">${comment.user.username}</span></c:if>
+                                    <c:if test="${comment.user.usergrade>3}">超级管理员：<span class="mdui-text-color-deep-orange">${comment.user.username}</span></c:if>
+                                    &nbsp;于<fmt:formatDate value="${comment.commenttime}" pattern="yyyy-MM-dd HH:mm:ss"/>发表</span>
                             </div>
+                            <c:if test="${comment.user.userid==user.userid||user.usergrade>9}">
+                                <div class="mdui-toolbar-spacer"></div>
+                                <button class="mdui-btn mdui-btn-dense mdui-color-red mdui-ripple" onclick="delCo(${comment.commentid},this)">删除</button>
+                            </c:if>
                         </div>
                         <div class="mdui-panel-item-body mdui-typo">
                             <blockquote>
@@ -148,17 +158,24 @@
         </a>
     </div>
 </div>
-
+<div class="mdui-dialog" id="dialog">
+    <div class="mdui-dialog-title">你确定要删除吗?</div>
+    <div class="mdui-dialog-content">你将会失去这条评论！</div>
+    <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple" mdui-dialog-cancel>算了</button>
+        <button id="dc" class="mdui-btn mdui-ripple mdui-color-blue" mdui-dialog-confirm>确定</button>
+    </div>
+</div>
 </body>
 <script src="<%=basePath%>js/bootstrap.min.js"
         type="text/javascript"></script>
 <script src="<%=basePath%>js/mdui.js"></script>
 <script src="<%=basePath%>js/jquery.min.js"></script>
+<script src="<%=basePath%>layer/layer.js"></script>
 <script type="text/javascript">
     //欢迎提示
-    mdui.snackbar({
-        message: '文章详情页！',
-        position: 'top'
+    layer.ready(function(){
+        layer.msg('文章详情页', {anim: 4});
     });
     //将每位评论用户的用户名第一个字显示在图标上
     /*var username=$("#hiddenusername").val();
@@ -172,13 +189,24 @@
                         articleid:$("#articleid").val(),
                     },
                     function(data,status){
-                        mdui.snackbar({
-                            message: '评论成功！',
-                            position: 'top'
-                        });
+                        layer.msg('评论成功！', {anim: 4});
                         setTimeout(function(){window.location='/articleDetail.do?id='+$("#articleid").val()},1000);
                     });
         });
-
+    //删除评论
+    function delCo(id,_this) {
+        var _this=$(_this);
+        new mdui.Dialog('#dialog').open();
+        $('#dc').click(function () {
+            $.post("<%=basePath%>commentDel.do",
+                    {
+                        commentid:id,
+                    },
+                    function(data,status){
+                        layer.msg('删除成功！', {anim: 4});
+                        _this.parents(".commentdiv").remove();
+                    });
+        });
+    }
 </script>
 </html>

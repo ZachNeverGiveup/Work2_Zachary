@@ -109,11 +109,11 @@
         type="text/javascript"></script>
 <script src="js/mdui.js"></script>
 <script src="js/jquery.min.js"></script>
+<script src="<%=basePath%>layer/layer.js"></script>
 <script type="text/javascript">
-    // 欢迎提示
-    mdui.snackbar({
-        message: '进入编辑文章模式……！',
-        position: 'top'
+    //欢迎提示
+    layer.ready(function(){
+        layer.msg('进入编辑文章模式……', {anim: 4});
     });
     //将隐藏输入框里的文章内容添加到textarea中
     $("#mc").val($("#atc").val());

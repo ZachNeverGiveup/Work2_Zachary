@@ -43,6 +43,12 @@ public class UserController {
         return "login";
     }
 
+    /**
+     * 用户注册方法，同时在用户日志表中添加用户的信息
+     * @param user
+     * @param phonecode
+     * @return
+     */
     @RequestMapping("/userRegist.do")
     public String userLogin(User user, String phonecode) {
         logger.info("正在注册…………");
@@ -58,7 +64,7 @@ public class UserController {
 
     /**
      * userphoneExist.do
-     *
+     *检测用户手机号是否存在的方法
      * @throws IOException
      */
 
@@ -80,6 +86,7 @@ public class UserController {
     }
 
     /**
+     * 创造手机验证码
      * phonecodeCreate.do
      */
     @RequestMapping("/phonecodeCreate.do")
@@ -178,6 +185,15 @@ public class UserController {
      */
     @RequestMapping("toManageUser.do")
     public String toManageUser(HttpServletRequest request){
+        //先判断用户等级是否足够
+        User user = (User) request.getSession().getAttribute("user");
+        if (user!=null&&user.getUsergrade()<10){
+            logger.info("非法操作：用户等级不够");
+            return "redirect:toArticleCenter.do?pageNow=1";
+        }else if(null==user){
+            logger.info("非法操作：用户等级不够");
+            return "redirect:toArticleCenter.do?pageNow=1";
+        }
         logger.info("尊敬的联蔚论坛管理员正在前往管理会员界面");
         logger.info("正在从数据库中查询出所有非管理员账号……（即等级小于10的账号）");
         //查询等级小于10的账号，原因是管理员本身不能管理自己
@@ -188,6 +204,12 @@ public class UserController {
     /**
      * editUser.do
      * 修改用户信息
+     * 主要是修改用户的等级
+     * 0    代表普通用户，具有增删改查自己的文章的权限以及查看他人文章的权限。
+     * 1    代表会员用户，具有增删改查自己的文章的权限以及查看、编辑他人文章的权限。
+     * 2    代表尊贵会员，具有增删改查自己的文章的权限以及查看、删除他人文章的权限。
+     * 3    代表超级会员，具有增删改查自己的文章的权限以及查看、编辑、删除他人文章的权限。
+     * >3(此处设为10) 代表超级管理员，具有增删改查自己的文章的权限以及查看、编辑、删除他人文章的权限以及修改用户角色的权限。
      */
     @RequestMapping("editUser.do")
     @ResponseBody

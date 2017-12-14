@@ -27,10 +27,10 @@ import java.util.List;
 @Controller
 public class ArticleController {
     @Autowired
-    ArticleServiceImpl articleService;
+    private ArticleServiceImpl articleService;
 
     @Autowired
-    CommentServiceImpl commentService;
+    private CommentServiceImpl commentService;
 
     //日志记录
     private static Logger logger = LoggerFactory.getLogger(ArticleController.class);
@@ -57,13 +57,20 @@ public class ArticleController {
      */
     @RequestMapping("toArticleCenter.do")
     public String toArticleByPage(HttpServletRequest request,Integer pageNow){
+        //共有rowCount条记录
         List<Article> arts= articleService.selectArticlesByPage(PAGE_SIZE,pageNow);
         int rowCount=articleService.selectAllArticles().size();
+        //共有pageCount页(除的尽就是总数除以每页的数，除不尽就+1)
         int pageCount = rowCount%PAGE_SIZE==0?rowCount/PAGE_SIZE:rowCount/PAGE_SIZE+1;
         request.setAttribute("arts",arts);
         request.setAttribute("pageNow",pageNow);
         request.setAttribute("rowCount",rowCount);
         request.setAttribute("pageCount",pageCount);
+        //如果传来的页码超过总页面数，则跳转到最后一页。
+        if(pageNow>pageCount){
+            request.setAttribute("pageNow",pageCount);
+            return "redirect:toArticleCenter.do?pageNow="+pageCount;
+        }
         return "article";
     }
     /**
@@ -90,6 +97,7 @@ public class ArticleController {
 
     /**
      * 根据文章的ID获取文章的具体信息，然后将文章的具体信息放到request域中，返回编辑页面
+     * 此方法还判断了用户是否有编辑这篇文章的权限，没有则返回论坛首页
      * @param request
      * @param articleid
      * @return
@@ -99,11 +107,28 @@ public class ArticleController {
         logger.info("传进来的articleid是："+articleid);
         Integer articleIdAfter = articleid/ARTICLE_ID_CHANGE_NUMBER;
         logger.info("改变之后的articleid是："+articleIdAfter);
+        //以下是判断当前用户是否具有权限
+        //首先查出session里的用户信息
+        User user = (User) request.getSession().getAttribute("user");
+        //然后查出这篇文章的信息
         Article article=articleService.selectArticleByPrimaryKey(articleIdAfter);
-        request.setAttribute("article",article);
-        return "articleEdit";
+        if(user!=null){
+            //如果用户的id是这篇文章的userid或者用户的等级是1或者大于等于3，则用户有编辑权限
+            if(user.getUserid()==article.getArticleuserid()||user.getUsergrade()==1||user.getUsergrade()>=3){
+                request.setAttribute("article",article);
+                return "articleEdit";
+            }else{
+                return "redirect:toArticleCenter.do?pageNow=1";
+            }
+        }else{
+            //用户登录信息不存在，返回首页
+            return "redirect:toArticleCenter.do?pageNow=1";
+        }
     }
     /**
+     * 编辑文章的方法
+     * 把文章的发表时间也一并更新
+     * 如果文章没有评论，则文章的最后评论时间仍然是第一次的发表时间
      * updateArticle.do
      */
     @RequestMapping("updateArticle.do")
@@ -126,6 +151,7 @@ public class ArticleController {
         return "articleAdd";
     }
     /**
+     * 写新文章的方法，只是一个insert方法
      * addArticle.do
      */
     @RequestMapping("addArticle.do")

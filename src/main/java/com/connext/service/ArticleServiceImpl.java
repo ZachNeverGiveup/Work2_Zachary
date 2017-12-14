@@ -56,26 +56,49 @@ public class ArticleServiceImpl implements ArticleService {
 
     }
 
+    /**
+     * 根据用户查文章
+     * @param userId
+     * @return
+     */
     @Override
     public List<Article> selectArticlesByUserId(Integer userId) {
         return articleMapper.selectByUserId(userId);
     }
 
+    /**
+     *
+     * 根据文章id查文章
+     * @param id
+     * @return
+     */
     @Override
     public Article selectArticleByPrimaryKey(Integer id) {
         return articleMapper.selectByPrimaryKey(id);
     }
 
+    /**
+     * 更新文章
+     * @param article
+     */
     @Override
     public void updateByPrimaryKeySelective(Article article) {
         articleMapper.updateByPrimaryKeySelective(article);
     }
 
+    /**
+     * 插入文章
+     * @param article
+     */
     @Override
     public void insertArticle(Article article) {
         articleMapper.insertSelective(article);
     }
 
+    /**
+     * 根据id删除文章
+     * @param id
+     */
     @Override
     public void deleteArticleById(Integer id) {
         articleMapper.deleteByPrimaryKey(id);

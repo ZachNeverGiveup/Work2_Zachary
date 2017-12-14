@@ -1,0 +1,780 @@
+2017-12-14 14:41:34,340 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: delete from comment where commentid = ? 
+2017-12-14 14:41:34,349 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 21(Integer)
+2017-12-14 14:41:34,340 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: delete from comment where commentid = ? 
+2017-12-14 14:41:34,356 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 21(Integer)
+2017-12-14 14:41:34,358 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 0
+2017-12-14 14:41:34,359 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select commentid, commentcontent, commentuserid, commentarticleid, commenttime from comment where commentid = ? 
+2017-12-14 14:41:34,360 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 21(Integer)
+2017-12-14 14:41:34,363 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 14:41:34,356 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 0
+2017-12-14 14:41:34,366 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select commentid, commentcontent, commentuserid, commentarticleid, commenttime from comment where commentid = ? 
+2017-12-14 14:41:34,370 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 21(Integer)
+2017-12-14 14:41:34,371 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 14:42:41,502 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:42:41,503 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:42:41,505 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:42:41,506 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 14:42:41,506 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:42:41,507 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 14:42:48,899 INFO (CommentController.java:36)- 123456215
+2017-12-14 14:42:48,936 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into comment ( commentcontent, commentuserid, commentarticleid, commenttime ) values ( ?, ?, ?, ? ) 
+2017-12-14 14:42:48,938 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 123456(String), 2(Integer), 15(Integer), 2017-12-14 14:42:48.0(Timestamp)
+2017-12-14 14:42:49,003 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:42:49,004 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:42:49,005 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:42:49,007 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:42:49,009 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update article SET articlecommentnum = ?, articlelastcommenttime = ? where articleid = ? 
+2017-12-14 14:42:49,011 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 2(Integer), 2017-12-14 14:42:48.0(Timestamp), 15(Integer)
+2017-12-14 14:42:49,045 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:42:49,051 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:42:49,052 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:42:49,053 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:42:49,054 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 14:42:49,055 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:42:49,057 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:42:50,081 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:42:50,084 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:42:50,088 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:42:50,091 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 14:42:50,093 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:42:50,097 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:42:53,835 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: delete from comment where commentid = ? 
+2017-12-14 14:42:53,836 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 22(Integer)
+2017-12-14 14:42:53,897 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:42:53,897 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select commentid, commentcontent, commentuserid, commentarticleid, commenttime from comment where commentid = ? 
+2017-12-14 14:42:53,898 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 22(Integer)
+2017-12-14 14:42:53,899 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 14:46:23,363 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 7632 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-14 14:46:23,368 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-14 14:46:23,369 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-14 14:46:30,097 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 7.447 seconds (JVM running for 8.242)
+2017-12-14 14:46:35,919 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-14 14:46:35,982 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-14 14:46:40,192 INFO (UserController.java:74)- 正在检测用户手机号是否存在…………
+2017-12-14 14:46:40,194 INFO (UserController.java:75)- userphoneuserphoneuserphoneuserphone15161182029
+2017-12-14 14:46:40,565 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 14:46:40,592 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String)
+2017-12-14 14:46:40,603 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:46:40,605 ERROR (UserController.java:79)- 已存在
+2017-12-14 14:46:40,606 INFO (UserController.java:85)- 检测完成…………
+2017-12-14 14:46:42,456 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 14:46:42,458 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String)
+2017-12-14 14:46:42,460 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:46:42,463 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-14 14:46:42,464 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-14 14:46:42,466 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:46:42,468 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-14 14:46:42,469 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String)
+2017-12-14 14:46:42,471 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:46:42,473 INFO (UserController.java:171)- 登陆成功
+2017-12-14 14:46:42,473 INFO (UserController.java:172)- 重置用户密码输错次数……
+2017-12-14 14:46:42,474 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-14 14:46:42,475 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String)
+2017-12-14 14:46:42,556 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:46:42,557 INFO (UserController.java:175)- 用户密码输错次数已重置为0……
+2017-12-14 14:46:42,588 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 14:46:42,589 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 14:46:42,602 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 14:46:42,604 INFO (ArticleServiceImpl.java:46)- 共有12条记录
+2017-12-14 14:46:42,604 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 14:46:42,604 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 14:46:42,607 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 14:46:42,608 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 14:46:42,615 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 14:46:42,616 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 14:46:42,617 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 14:46:42,622 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 14:46:46,049 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:46:46,051 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:46:46,054 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:46:46,056 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 14:46:46,057 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:46:46,058 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 14:46:51,175 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:46:51,176 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:46:51,178 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:46:51,179 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 14:46:51,179 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:46:51,180 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 14:46:54,905 INFO (CommentController.java:36)- 123313234211215
+2017-12-14 14:46:54,943 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into comment ( commentcontent, commentuserid, commentarticleid, commenttime ) values ( ?, ?, ?, ? ) 
+2017-12-14 14:46:54,945 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 123313234211(String), 2(Integer), 15(Integer), 2017-12-14 14:46:54.0(Timestamp)
+2017-12-14 14:46:55,014 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:46:55,015 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:46:55,016 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:46:55,017 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:46:55,018 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update article SET articlecommentnum = ?, articlelastcommenttime = ? where articleid = ? 
+2017-12-14 14:46:55,019 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3(Integer), 2017-12-14 14:46:54.0(Timestamp), 15(Integer)
+2017-12-14 14:46:55,047 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:46:55,055 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:46:55,057 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:46:55,059 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:46:55,060 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 14:46:55,061 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:46:55,062 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:46:56,082 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:46:56,083 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:46:56,085 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:46:56,087 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 14:46:56,088 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:46:56,092 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:47:00,646 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: delete from comment where commentid = ? 
+2017-12-14 14:47:00,647 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 23(Integer)
+2017-12-14 14:47:00,689 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:47:00,690 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select commentid, commentcontent, commentuserid, commentarticleid, commenttime from comment where commentid = ? 
+2017-12-14 14:47:00,691 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 23(Integer)
+2017-12-14 14:47:00,693 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 14:47:53,429 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 12828 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-14 14:47:53,435 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-14 14:47:53,436 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-14 14:48:00,354 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 7.65 seconds (JVM running for 8.314)
+2017-12-14 14:48:06,491 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-14 14:48:06,491 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-14 14:48:09,410 INFO (UserController.java:74)- 正在检测用户手机号是否存在…………
+2017-12-14 14:48:09,412 INFO (UserController.java:75)- userphoneuserphoneuserphoneuserphone15161182029
+2017-12-14 14:48:09,796 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 14:48:09,823 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String)
+2017-12-14 14:48:09,843 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:48:09,845 ERROR (UserController.java:79)- 已存在
+2017-12-14 14:48:09,847 INFO (UserController.java:85)- 检测完成…………
+2017-12-14 14:48:14,206 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 14:48:14,207 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String)
+2017-12-14 14:48:14,209 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:48:14,212 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-14 14:48:14,213 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-14 14:48:14,215 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:48:14,216 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-14 14:48:14,217 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String)
+2017-12-14 14:48:14,219 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:48:14,220 INFO (UserController.java:171)- 登陆成功
+2017-12-14 14:48:14,220 INFO (UserController.java:172)- 重置用户密码输错次数……
+2017-12-14 14:48:14,221 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-14 14:48:14,221 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String)
+2017-12-14 14:48:14,284 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:48:14,285 INFO (UserController.java:175)- 用户密码输错次数已重置为0……
+2017-12-14 14:48:14,319 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 14:48:14,321 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 14:48:14,334 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 14:48:14,335 INFO (ArticleServiceImpl.java:46)- 共有12条记录
+2017-12-14 14:48:14,335 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 14:48:14,336 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 14:48:14,339 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 14:48:14,340 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 14:48:14,354 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 14:48:14,355 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 14:48:14,357 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 14:48:14,364 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 14:48:16,596 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:48:16,597 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:48:16,600 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:48:16,603 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 14:48:16,604 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:48:16,606 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 14:48:41,137 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 14:48:41,138 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 14:48:41,145 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 14:48:41,146 INFO (ArticleServiceImpl.java:46)- 共有12条记录
+2017-12-14 14:48:41,146 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 14:48:41,146 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 14:48:41,147 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 14:48:41,148 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 14:48:41,153 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 14:48:41,154 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 14:48:41,155 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 14:48:41,161 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 14:48:43,268 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:48:43,269 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:48:43,271 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:48:43,273 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 14:48:43,275 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:48:43,276 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 14:48:47,742 INFO (CommentController.java:36)- 123456215
+2017-12-14 14:48:47,781 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into comment ( commentcontent, commentuserid, commentarticleid, commenttime ) values ( ?, ?, ?, ? ) 
+2017-12-14 14:48:47,783 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 123456(String), 2(Integer), 15(Integer), 2017-12-14 14:48:47.0(Timestamp)
+2017-12-14 14:48:47,844 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:48:47,845 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:48:47,845 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:48:47,847 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:48:47,849 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update article SET articlecommentnum = ?, articlelastcommenttime = ? where articleid = ? 
+2017-12-14 14:48:47,851 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 2017-12-14 14:48:47.0(Timestamp), 15(Integer)
+2017-12-14 14:48:47,902 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:48:47,908 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:48:47,909 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:48:47,912 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:48:47,914 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 14:48:47,915 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:48:47,917 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:48:48,941 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:48:48,942 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:48:48,947 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:48:48,949 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 14:48:48,951 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:48:48,953 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:48:53,369 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select commentid, commentcontent, commentuserid, commentarticleid, commenttime from comment where commentid = ? 
+2017-12-14 14:48:53,370 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 24(Integer)
+2017-12-14 14:48:53,372 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:48:53,373 INFO (CommentServiceImpl.java:63)- comment的文章id：15
+2017-12-14 14:48:53,374 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:48:53,375 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:48:53,377 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:48:53,379 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update article SET articletitle = ?, articlecontent = ?, articleaddtime = ?, articleuserid = ?, articlecommentnum = ?, articlelastcommenttime = ? where articleid = ? 
+2017-12-14 14:48:53,381 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 联蔚科技：零售行业全渠道电商解决方案(String), 目前零售行业正在经历数字化转型，转型的核心就是通过建立全渠道电商，改善顾客生命周期的消费体验，提升销量，增加客户忠诚度，更好的发挥零售商的优势。调查表明，多渠道销售活动获取利润远大于单一渠道模式， 相比较单一渠道的消费者，通过多渠道购物的消费者可以给零售商增加约40%的利润。
+ 联蔚科技针对零售行业的特征，利用hybris 、WCS电商解决方案为零售企业打造高性能的全渠道电子商务网站，让消费者享受非凡的网购体验与无可挑剔的客户服务。(String), 2017-12-13 16:30:52.0(Timestamp), 5(Integer), 0(Integer), 2017-12-14 14:48:47.0(Timestamp), 15(Integer)
+2017-12-14 14:48:53,436 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:48:53,437 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: delete from comment where commentid = ? 
+2017-12-14 14:48:53,438 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 24(Integer)
+2017-12-14 14:48:53,469 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:49:08,518 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 14:49:08,519 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 14:49:08,524 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 14:49:08,525 INFO (ArticleServiceImpl.java:46)- 共有12条记录
+2017-12-14 14:49:08,526 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 14:49:08,526 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 14:49:08,527 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 14:49:08,528 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 14:49:08,532 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 14:49:08,533 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 14:49:08,534 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 14:49:08,538 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 14:49:11,444 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:49:11,445 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:49:11,448 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:49:11,449 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 14:49:11,450 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:49:11,451 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 14:49:13,930 INFO (CommentController.java:36)- 123215
+2017-12-14 14:49:13,932 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into comment ( commentcontent, commentuserid, commentarticleid, commenttime ) values ( ?, ?, ?, ? ) 
+2017-12-14 14:49:13,934 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 123(String), 2(Integer), 15(Integer), 2017-12-14 14:49:13.0(Timestamp)
+2017-12-14 14:49:13,995 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:49:13,996 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:49:13,997 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:49:13,998 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:49:14,000 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update article SET articlecommentnum = ?, articlelastcommenttime = ? where articleid = ? 
+2017-12-14 14:49:14,001 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer), 2017-12-14 14:49:13.0(Timestamp), 15(Integer)
+2017-12-14 14:49:14,028 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:49:14,034 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:49:14,052 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:49:14,056 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:49:14,058 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 14:49:14,058 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:49:14,061 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:49:15,086 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:49:15,088 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:49:15,092 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:49:15,096 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 14:49:15,098 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:49:15,101 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:49:18,137 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 14:49:18,138 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 14:49:18,142 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 14:49:18,143 INFO (ArticleServiceImpl.java:46)- 共有12条记录
+2017-12-14 14:49:18,144 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 14:49:18,144 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 14:49:18,145 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 14:49:18,146 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 14:49:18,152 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 14:49:18,153 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 14:49:18,154 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 14:49:18,158 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 14:49:23,373 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:49:23,374 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:49:23,376 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:49:23,377 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 14:49:23,378 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:49:23,379 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:49:26,346 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select commentid, commentcontent, commentuserid, commentarticleid, commenttime from comment where commentid = ? 
+2017-12-14 14:49:26,348 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 25(Integer)
+2017-12-14 14:49:26,350 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:49:26,351 INFO (CommentServiceImpl.java:63)- comment的文章id：15
+2017-12-14 14:49:26,352 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 14:49:26,353 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15(Integer)
+2017-12-14 14:49:26,355 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:49:26,356 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update article SET articletitle = ?, articlecontent = ?, articleaddtime = ?, articleuserid = ?, articlecommentnum = ?, articlelastcommenttime = ? where articleid = ? 
+2017-12-14 14:49:26,358 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 联蔚科技：零售行业全渠道电商解决方案(String), 目前零售行业正在经历数字化转型，转型的核心就是通过建立全渠道电商，改善顾客生命周期的消费体验，提升销量，增加客户忠诚度，更好的发挥零售商的优势。调查表明，多渠道销售活动获取利润远大于单一渠道模式， 相比较单一渠道的消费者，通过多渠道购物的消费者可以给零售商增加约40%的利润。
+ 联蔚科技针对零售行业的特征，利用hybris 、WCS电商解决方案为零售企业打造高性能的全渠道电子商务网站，让消费者享受非凡的网购体验与无可挑剔的客户服务。(String), 2017-12-13 16:30:52.0(Timestamp), 5(Integer), 0(Integer), 2017-12-14 14:49:13.0(Timestamp), 15(Integer)
+2017-12-14 14:49:26,404 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:49:26,405 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: delete from comment where commentid = ? 
+2017-12-14 14:49:26,406 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 25(Integer)
+2017-12-14 14:49:26,436 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:49:29,206 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 14:49:29,208 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 14:49:29,213 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 14:49:29,214 INFO (ArticleServiceImpl.java:46)- 共有12条记录
+2017-12-14 14:49:29,214 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 14:49:29,214 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 14:49:29,215 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 14:49:29,215 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 14:49:29,220 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 14:49:29,221 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 14:49:29,221 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 14:49:29,225 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 14:54:53,488 INFO (ArticleController.java:143)- 正在前往新增文章界面……
+2017-12-14 14:59:21,354 INFO (StartupInfoLogger.java:48)- Starting Work2ZacharyApplication on nkgw10nh1485 with PID 12448 (E:\WorkSpace\Work2_Zachary\target\classes started by Zach.Zhang in E:\WorkSpace\Work2_Zachary)
+2017-12-14 14:59:21,358 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2017-12-14 14:59:21,359 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-14 14:59:27,190 INFO (StartupInfoLogger.java:57)- Started Work2ZacharyApplication in 6.467 seconds (JVM running for 7.087)
+2017-12-14 14:59:46,059 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-14 14:59:52,422 INFO (UserController.java:74)- 正在检测用户手机号是否存在…………
+2017-12-14 14:59:52,423 INFO (UserController.java:75)- userphoneuserphoneuserphoneuserphone15161182029
+2017-12-14 14:59:52,779 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 14:59:52,806 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String)
+2017-12-14 14:59:52,821 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:59:52,823 ERROR (UserController.java:79)- 已存在
+2017-12-14 14:59:52,825 INFO (UserController.java:85)- 检测完成…………
+2017-12-14 14:59:54,532 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 14:59:54,533 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String)
+2017-12-14 14:59:54,535 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:59:54,538 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-14 14:59:54,539 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-14 14:59:54,540 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:59:54,542 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-14 14:59:54,543 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String)
+2017-12-14 14:59:54,545 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 14:59:54,545 INFO (UserController.java:171)- 登陆成功
+2017-12-14 14:59:54,546 INFO (UserController.java:172)- 重置用户密码输错次数……
+2017-12-14 14:59:54,546 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-14 14:59:54,547 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182029(String)
+2017-12-14 14:59:54,626 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 14:59:54,627 INFO (UserController.java:175)- 用户密码输错次数已重置为0……
+2017-12-14 14:59:54,642 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 14:59:54,643 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 14:59:54,653 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 14:59:54,654 INFO (ArticleServiceImpl.java:46)- 共有12条记录
+2017-12-14 14:59:54,655 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 14:59:54,656 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 14:59:54,659 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 14:59:54,660 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 14:59:54,667 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 14:59:54,668 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 14:59:54,669 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 14:59:54,677 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 14:59:56,932 INFO (ArticleController.java:143)- 正在前往新增文章界面……
+2017-12-14 15:00:03,134 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 15:00:03,135 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2017-12-14 15:00:03,137 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:00:03,140 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 15:00:03,141 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(Integer)
+2017-12-14 15:00:03,146 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 5
+2017-12-14 15:09:28,236 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:09:28,238 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:09:28,246 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 15:09:28,247 INFO (ArticleServiceImpl.java:46)- 共有12条记录
+2017-12-14 15:09:28,247 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 15:09:28,247 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 15:09:28,248 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 15:09:28,249 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 15:09:28,254 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 15:09:28,255 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:09:28,256 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:09:28,261 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 15:09:32,536 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-14 15:09:33,661 INFO (UserController.java:36)- 正在前往注册页面…………
+2017-12-14 15:09:42,186 INFO (UserController.java:74)- 正在检测用户手机号是否存在…………
+2017-12-14 15:09:42,187 INFO (UserController.java:75)- userphoneuserphoneuserphoneuserphone15161182025
+2017-12-14 15:09:42,190 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 15:09:42,192 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182025(String)
+2017-12-14 15:09:42,195 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 15:09:42,197 INFO (UserController.java:82)- 不存在
+2017-12-14 15:09:42,198 INFO (UserController.java:85)- 检测完成…………
+2017-12-14 15:10:04,988 INFO (UserController.java:95)- 正在准备发送手机验证码…………
+2017-12-14 15:10:04,989 INFO (UserController.java:110)- 【联蔚科技】您的验证码是： 6624，在60秒内有效。如非本人操作请忽略本短信。
+2017-12-14 15:10:13,299 INFO (UserController.java:121)- 正在判断验证码是否正确…………
+2017-12-14 15:10:13,300 INFO (UserController.java:124)- 验证码正确
+2017-12-14 15:10:13,302 INFO (UserController.java:130)- 验证码检测完成…………
+2017-12-14 15:10:14,742 INFO (UserController.java:54)- 正在注册…………
+2017-12-14 15:10:14,744 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into user (userid,username, userphone, userpassword ) values (?,?, ?, ? ) 
+2017-12-14 15:10:14,746 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: null, 36Kr快讯(String), 15161182025(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-14 15:10:14,834 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:10:14,835 INFO (UserController.java:57)- 注册完成…………
+2017-12-14 15:10:14,835 INFO (UserController.java:58)- 添加用户日志…………
+2017-12-14 15:10:14,865 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into userlog ( userphone ) values ( ? ) 
+2017-12-14 15:10:14,866 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182025(String)
+2017-12-14 15:10:14,942 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:10:22,412 INFO (UserController.java:74)- 正在检测用户手机号是否存在…………
+2017-12-14 15:10:22,413 INFO (UserController.java:75)- userphoneuserphoneuserphoneuserphone15161182025
+2017-12-14 15:10:22,415 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 15:10:22,417 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182025(String)
+2017-12-14 15:10:22,419 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:10:22,420 ERROR (UserController.java:79)- 已存在
+2017-12-14 15:10:22,421 INFO (UserController.java:85)- 检测完成…………
+2017-12-14 15:10:25,518 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 15:10:25,519 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182025(String)
+2017-12-14 15:10:25,521 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:10:25,522 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-14 15:10:25,522 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182025(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-14 15:10:25,525 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:10:25,526 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-14 15:10:25,526 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182025(String)
+2017-12-14 15:10:25,528 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:10:25,529 INFO (UserController.java:171)- 登陆成功
+2017-12-14 15:10:25,530 INFO (UserController.java:172)- 重置用户密码输错次数……
+2017-12-14 15:10:25,531 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-14 15:10:25,532 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161182025(String)
+2017-12-14 15:10:25,641 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:10:25,642 INFO (UserController.java:175)- 用户密码输错次数已重置为0……
+2017-12-14 15:10:25,657 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:10:25,659 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:10:25,670 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 15:10:25,672 INFO (ArticleServiceImpl.java:46)- 共有12条记录
+2017-12-14 15:10:25,672 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 15:10:25,673 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 15:10:25,674 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 15:10:25,676 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 15:10:25,683 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 15:10:25,684 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:10:25,685 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:10:25,693 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 12
+2017-12-14 15:10:30,120 INFO (ArticleController.java:143)- 正在前往新增文章界面……
+2017-12-14 15:10:53,623 INFO (ArticleController.java:158)- 即将插入数据库的文章信息为：Article{articleid=null, articletitle='WTO鼓励所有成员拥抱eWTP帮助小微企业', articlecontent='12月14日，世贸组织发布《电子商务联合声明》：“重申全球电子商务的重要性及其为包容性贸易和发展所创造的机会”，“鼓励所有WTO成员加入我们，支持和提升电子商务为全球企业和消费者带来益处”。这也是eWTP倡议的提出者马云为普惠式全球化奔走的最新成果。在部长级会议期间，阿里巴巴董事局主席马云作为创始合作伙伴的世界电子贸易平台（eWTP）与世界贸易组织（WTO）、世界经济论坛共同宣布了主题为“赋能电子商务”的合作机制。三方宣布建立长期对话机制，汇聚来自政府、企业和其他各方的意见，为全球电子商务提供一座连接实践和政策之间的桥梁。（新浪财经）', articleaddtime=Thu Dec 14 15:10:53 CST 2017, articleuserid=6, articlecommentnum=null, articlelastcommenttime=Thu Dec 14 15:10:53 CST 2017, user=null}
+2017-12-14 15:10:53,626 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into article ( articletitle, articlecontent, articleaddtime, articleuserid, articlelastcommenttime ) values ( ?, ?, ?, ?, ? ) 
+2017-12-14 15:10:53,628 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: WTO鼓励所有成员拥抱eWTP帮助小微企业(String), 12月14日，世贸组织发布《电子商务联合声明》：“重申全球电子商务的重要性及其为包容性贸易和发展所创造的机会”，“鼓励所有WTO成员加入我们，支持和提升电子商务为全球企业和消费者带来益处”。这也是eWTP倡议的提出者马云为普惠式全球化奔走的最新成果。在部长级会议期间，阿里巴巴董事局主席马云作为创始合作伙伴的世界电子贸易平台（eWTP）与世界贸易组织（WTO）、世界经济论坛共同宣布了主题为“赋能电子商务”的合作机制。三方宣布建立长期对话机制，汇聚来自政府、企业和其他各方的意见，为全球电子商务提供一座连接实践和政策之间的桥梁。（新浪财经）(String), 2017-12-14 15:10:53.0(Timestamp), 6(Integer), 2017-12-14 15:10:53.0(Timestamp)
+2017-12-14 15:10:53,710 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:10:53,720 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-14 15:10:53,720 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 6(Integer), 6(Integer)
+2017-12-14 15:10:53,721 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:10:56,573 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:10:56,574 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:10:56,580 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 13
+2017-12-14 15:10:56,581 INFO (ArticleServiceImpl.java:46)- 共有13条记录
+2017-12-14 15:10:56,582 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 15:10:56,582 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 15:10:56,583 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 15:10:56,583 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 15:10:56,588 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 15:10:56,589 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:10:56,590 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:10:56,595 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 13
+2017-12-14 15:11:15,651 INFO (ArticleController.java:143)- 正在前往新增文章界面……
+2017-12-14 15:11:58,056 INFO (ArticleController.java:158)- 即将插入数据库的文章信息为：Article{articleid=null, articletitle='万达回应《王健林的滑铁卢》：多处严重违背事实', articlecontent='万达集团声明称，12月11日，一个名为“包邮区”的自媒体发布一篇名为《王健林的滑铁卢》的文章，对万达集团和王健林本人进行恶意诽谤和中伤，多处严重违背事实。万达表示将坚决采取法律手段维护企业名誉。万达目前账面现金超过2000亿元，2017年收入超过2000亿元，企业经营一切正常，全球没有任何债务违约。根据万达2016年财务报表，万达净资产超过3000亿元，2017年净资产还会增加。原文链接：http://www.wanda.cn/2017/2017_1214/37489.html', articleaddtime=Thu Dec 14 15:11:58 CST 2017, articleuserid=6, articlecommentnum=null, articlelastcommenttime=Thu Dec 14 15:11:58 CST 2017, user=null}
+2017-12-14 15:11:58,059 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into article ( articletitle, articlecontent, articleaddtime, articleuserid, articlelastcommenttime ) values ( ?, ?, ?, ?, ? ) 
+2017-12-14 15:11:58,061 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 万达回应《王健林的滑铁卢》：多处严重违背事实(String), 万达集团声明称，12月11日，一个名为“包邮区”的自媒体发布一篇名为《王健林的滑铁卢》的文章，对万达集团和王健林本人进行恶意诽谤和中伤，多处严重违背事实。万达表示将坚决采取法律手段维护企业名誉。万达目前账面现金超过2000亿元，2017年收入超过2000亿元，企业经营一切正常，全球没有任何债务违约。根据万达2016年财务报表，万达净资产超过3000亿元，2017年净资产还会增加。原文链接：http://www.wanda.cn/2017/2017_1214/37489.html(String), 2017-12-14 15:11:58.0(Timestamp), 6(Integer), 2017-12-14 15:11:58.0(Timestamp)
+2017-12-14 15:11:58,135 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:11:58,144 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-14 15:11:58,145 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 6(Integer), 6(Integer)
+2017-12-14 15:11:58,146 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2017-12-14 15:11:59,764 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 15:11:59,765 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 17(Integer)
+2017-12-14 15:11:59,767 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:11:59,768 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 15:11:59,769 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 17(Integer)
+2017-12-14 15:11:59,773 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 15:12:15,485 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:12:15,486 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:12:15,491 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 14
+2017-12-14 15:12:15,492 INFO (ArticleServiceImpl.java:46)- 共有14条记录
+2017-12-14 15:12:15,493 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 15:12:15,493 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 15:12:15,494 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 15:12:15,494 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 15:12:15,497 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 15:12:15,498 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:12:15,499 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:12:15,503 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 14
+2017-12-14 15:18:45,604 INFO (ArticleController.java:143)- 正在前往新增文章界面……
+2017-12-14 15:19:30,358 INFO (ArticleController.java:158)- 即将插入数据库的文章信息为：Article{articleid=null, articletitle='美国企业费用管理公司Divvy获700万美元种子轮融资', articlecontent='美国企业费用管理公司Divvy近日宣布获得700万美元种子轮融资，并公开发布了其平台。这笔资金将于扩大开发团队和销售部门，并建立客户支持团队。虽然只是种子轮，但创始人表示，公司已不再需要更多融资。Divvy 提供的服务，让主管可以更密切地监控员工支出，促使员工规范自己的消费行为。管理人员和财务部门会实时获得消费信息，以及时发现问题或超支行为。使用该平台，公司可以方便地批准常规开支，同时在需要时及时取消。Divvy 还能够自动生成财务报告，以应对审计的需要。', articleaddtime=Thu Dec 14 15:19:30 CST 2017, articleuserid=6, articlecommentnum=null, articlelastcommenttime=Thu Dec 14 15:19:30 CST 2017, user=null}
+2017-12-14 15:19:30,361 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into article ( articletitle, articlecontent, articleaddtime, articleuserid, articlelastcommenttime ) values ( ?, ?, ?, ?, ? ) 
+2017-12-14 15:19:30,363 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 美国企业费用管理公司Divvy获700万美元种子轮融资(String), 美国企业费用管理公司Divvy近日宣布获得700万美元种子轮融资，并公开发布了其平台。这笔资金将于扩大开发团队和销售部门，并建立客户支持团队。虽然只是种子轮，但创始人表示，公司已不再需要更多融资。Divvy 提供的服务，让主管可以更密切地监控员工支出，促使员工规范自己的消费行为。管理人员和财务部门会实时获得消费信息，以及时发现问题或超支行为。使用该平台，公司可以方便地批准常规开支，同时在需要时及时取消。Divvy 还能够自动生成财务报告，以应对审计的需要。(String), 2017-12-14 15:19:30.0(Timestamp), 6(Integer), 2017-12-14 15:19:30.0(Timestamp)
+2017-12-14 15:19:30,448 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:19:30,455 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-14 15:19:30,456 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 6(Integer), 6(Integer)
+2017-12-14 15:19:30,458 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2017-12-14 15:19:38,200 INFO (ArticleController.java:143)- 正在前往新增文章界面……
+2017-12-14 15:20:09,461 INFO (ArticleController.java:158)- 即将插入数据库的文章信息为：Article{articleid=null, articletitle='太空旅游新进展：“最大窗户”飞行器成功试飞', articlecontent='据新华社报道，在沉寂一年多后，由美国电子商务巨头亚马逊公司创始人杰夫·贝索斯创建的蓝色起源公司13日宣布，该公司于12日成功试飞并回收升级版“新谢泼德”亚轨道飞行器，新版飞行器的一个亮点是拥有太空飞行器中“最大的窗户”。“新谢泼德”飞行器集火箭与飞船于一体。蓝色起源公司提供的视频显示，“新谢泼德”从地面垂直起飞，飞到一定高度后火箭与飞船分离，火箭先行返回，在接近地面时一个发动机点火，着陆支架展开，成功在目标着陆场垂直降落。飞船也在降落伞的帮助下成功着陆。', articleaddtime=Thu Dec 14 15:20:09 CST 2017, articleuserid=6, articlecommentnum=null, articlelastcommenttime=Thu Dec 14 15:20:09 CST 2017, user=null}
+2017-12-14 15:20:09,463 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into article ( articletitle, articlecontent, articleaddtime, articleuserid, articlelastcommenttime ) values ( ?, ?, ?, ?, ? ) 
+2017-12-14 15:20:09,466 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 太空旅游新进展：“最大窗户”飞行器成功试飞(String), 据新华社报道，在沉寂一年多后，由美国电子商务巨头亚马逊公司创始人杰夫·贝索斯创建的蓝色起源公司13日宣布，该公司于12日成功试飞并回收升级版“新谢泼德”亚轨道飞行器，新版飞行器的一个亮点是拥有太空飞行器中“最大的窗户”。“新谢泼德”飞行器集火箭与飞船于一体。蓝色起源公司提供的视频显示，“新谢泼德”从地面垂直起飞，飞到一定高度后火箭与飞船分离，火箭先行返回，在接近地面时一个发动机点火，着陆支架展开，成功在目标着陆场垂直降落。飞船也在降落伞的帮助下成功着陆。(String), 2017-12-14 15:20:09.0(Timestamp), 6(Integer), 2017-12-14 15:20:09.0(Timestamp)
+2017-12-14 15:20:09,533 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:20:09,547 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-14 15:20:09,549 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 6(Integer), 6(Integer)
+2017-12-14 15:20:09,554 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 4
+2017-12-14 15:20:54,063 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:20:54,064 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:20:54,071 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 16
+2017-12-14 15:20:54,072 INFO (ArticleServiceImpl.java:46)- 共有16条记录
+2017-12-14 15:20:54,072 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 15:20:54,073 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 15:20:54,073 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 15:20:54,074 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 15:20:54,077 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 15:20:54,078 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:20:54,078 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:20:54,083 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 16
+2017-12-14 15:21:00,599 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-14 15:21:01,477 INFO (UserController.java:36)- 正在前往注册页面…………
+2017-12-14 15:21:11,977 INFO (UserController.java:74)- 正在检测用户手机号是否存在…………
+2017-12-14 15:21:11,978 INFO (UserController.java:75)- userphoneuserphoneuserphoneuserphone13000000000
+2017-12-14 15:21:11,983 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 15:21:11,984 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13000000000(String)
+2017-12-14 15:21:11,988 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 15:21:11,989 INFO (UserController.java:82)- 不存在
+2017-12-14 15:21:11,990 INFO (UserController.java:85)- 检测完成…………
+2017-12-14 15:21:20,764 INFO (UserController.java:95)- 正在准备发送手机验证码…………
+2017-12-14 15:21:20,765 INFO (UserController.java:110)- 【联蔚科技】您的验证码是： 5290，在60秒内有效。如非本人操作请忽略本短信。
+2017-12-14 15:21:30,822 INFO (UserController.java:121)- 正在判断验证码是否正确…………
+2017-12-14 15:21:30,823 INFO (UserController.java:124)- 验证码正确
+2017-12-14 15:21:30,823 INFO (UserController.java:130)- 验证码检测完成…………
+2017-12-14 15:21:31,447 INFO (UserController.java:54)- 正在注册…………
+2017-12-14 15:21:31,448 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into user (userid,username, userphone, userpassword ) values (?,?, ?, ? ) 
+2017-12-14 15:21:31,449 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: null, 新华社(String), 13000000000(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-14 15:21:31,552 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:21:31,552 INFO (UserController.java:57)- 注册完成…………
+2017-12-14 15:21:31,553 INFO (UserController.java:58)- 添加用户日志…………
+2017-12-14 15:21:31,553 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into userlog ( userphone ) values ( ? ) 
+2017-12-14 15:21:31,554 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13000000000(String)
+2017-12-14 15:21:31,635 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:21:36,118 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 15:21:36,119 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1300(String)
+2017-12-14 15:21:36,120 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 15:21:36,121 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-14 15:21:36,122 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1300(String), d41d8cd98f00b204e9800998ecf8427e(String)
+2017-12-14 15:21:36,123 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 15:21:36,124 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-14 15:21:36,124 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1300(String)
+2017-12-14 15:21:36,125 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 15:21:36,125 INFO (UserController.java:148)- 手机号不存在
+2017-12-14 15:21:41,202 INFO (UserController.java:74)- 正在检测用户手机号是否存在…………
+2017-12-14 15:21:41,203 INFO (UserController.java:75)- userphoneuserphoneuserphoneuserphone13000000000
+2017-12-14 15:21:41,207 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 15:21:41,208 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13000000000(String)
+2017-12-14 15:21:41,210 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:21:41,211 ERROR (UserController.java:79)- 已存在
+2017-12-14 15:21:41,212 INFO (UserController.java:85)- 检测完成…………
+2017-12-14 15:21:43,695 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 15:21:43,696 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13000000000(String)
+2017-12-14 15:21:43,698 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:21:43,700 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-14 15:21:43,700 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13000000000(String), d4d31d7c99f4e37638a7fec10b921584(String)
+2017-12-14 15:21:43,702 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 15:21:43,703 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-14 15:21:43,704 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13000000000(String)
+2017-12-14 15:21:43,706 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:21:43,707 INFO (UserController.java:156)- 密码错误
+2017-12-14 15:21:43,707 INFO (UserController.java:158)- -------将错误次数+1
+2017-12-14 15:21:43,708 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = failtimes+1, lastfailtime = ? where userphone = ? 
+2017-12-14 15:21:43,709 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 2017-12-14 15:21:43.0(Timestamp), 13000000000(String)
+2017-12-14 15:21:43,821 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:21:47,540 INFO (UserController.java:74)- 正在检测用户手机号是否存在…………
+2017-12-14 15:21:47,542 INFO (UserController.java:75)- userphoneuserphoneuserphoneuserphone13000000000
+2017-12-14 15:21:47,544 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 15:21:47,546 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13000000000(String)
+2017-12-14 15:21:47,550 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:21:47,552 ERROR (UserController.java:79)- 已存在
+2017-12-14 15:21:47,553 INFO (UserController.java:85)- 检测完成…………
+2017-12-14 15:21:49,807 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 15:21:49,808 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13000000000(String)
+2017-12-14 15:21:49,810 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:21:49,811 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-14 15:21:49,811 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13000000000(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-14 15:21:49,814 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:21:49,815 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-14 15:21:49,817 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13000000000(String)
+2017-12-14 15:21:49,819 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:21:49,819 INFO (UserController.java:171)- 登陆成功
+2017-12-14 15:21:49,820 INFO (UserController.java:172)- 重置用户密码输错次数……
+2017-12-14 15:21:49,820 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-14 15:21:49,820 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 13000000000(String)
+2017-12-14 15:21:49,911 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:21:49,913 INFO (UserController.java:175)- 用户密码输错次数已重置为0……
+2017-12-14 15:21:49,927 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:21:49,929 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:21:49,940 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 16
+2017-12-14 15:21:49,941 INFO (ArticleServiceImpl.java:46)- 共有16条记录
+2017-12-14 15:21:49,941 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 15:21:49,941 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 15:21:49,943 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 15:21:49,944 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 15:21:49,948 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 15:21:49,949 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:21:49,950 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:21:49,957 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 16
+2017-12-14 15:22:20,278 INFO (ArticleController.java:143)- 正在前往新增文章界面……
+2017-12-14 15:24:52,514 INFO (ArticleController.java:158)- 即将插入数据库的文章信息为：Article{articleid=null, articletitle='永志不忘奋发图强——写在南京大屠杀惨案发生80周年', articlecontent='今年是南京大屠杀惨案发生80周年。今天是第四个南京大屠杀死难者国家公祭日。上午10时，凄厉的防空警报划破长空。习近平总书记等党和国家领导人出席国家公祭仪式，参观《南京大屠杀史实展》，并亲切会见南京大屠杀幸存者代表和为中国人民抗日战争胜利作出贡献的国际友人亲属代表。庄严的祭奠、深切的缅怀，宣示中国人民铭记历史、缅怀先烈、珍爱和平、开创未来的坚定立场，庄严表达走和平发展道路、共创人类美好未来的崇高愿望。
+“疑今者，察之古；不知来者，视之往。”近代以来，中国人民无数次经历了战争磨难，更加懂得和平的珍贵。走和平发展道路，始终做世界和平的建设者、全球发展的贡献者、国际秩序的维护者，是中国坚定不移的选择。各国人民携起手来，推动建设相互尊重、公平正义、合作共赢的新型国际关系，共同构建人类命运共同体，让和平的薪火代代相传，让发展的动力源源不断，让文明的光芒熠熠生辉，就将共同创造人类的美好未来。
+
+八十年风雨沧桑，八十年不懈奋斗，中华民族从苦难走向辉煌，迎来了伟大复兴的光明前景。让我们不忘历史、奋发图强，不断创造更加美好的幸福生活，同心共筑中华民族更加辉煌的未来。', articleaddtime=Thu Dec 14 15:24:52 CST 2017, articleuserid=7, articlecommentnum=null, articlelastcommenttime=Thu Dec 14 15:24:52 CST 2017, user=null}
+2017-12-14 15:24:52,516 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into article ( articletitle, articlecontent, articleaddtime, articleuserid, articlelastcommenttime ) values ( ?, ?, ?, ?, ? ) 
+2017-12-14 15:24:52,518 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 永志不忘奋发图强——写在南京大屠杀惨案发生80周年(String), 今年是南京大屠杀惨案发生80周年。今天是第四个南京大屠杀死难者国家公祭日。上午10时，凄厉的防空警报划破长空。习近平总书记等党和国家领导人出席国家公祭仪式，参观《南京大屠杀史实展》，并亲切会见南京大屠杀幸存者代表和为中国人民抗日战争胜利作出贡献的国际友人亲属代表。庄严的祭奠、深切的缅怀，宣示中国人民铭记历史、缅怀先烈、珍爱和平、开创未来的坚定立场，庄严表达走和平发展道路、共创人类美好未来的崇高愿望。
+“疑今者，察之古；不知来者，视之往。”近代以来，中国人民无数次经历了战争磨难，更加懂得和平的珍贵。走和平发展道路，始终做世界和平的建设者、全球发展的贡献者、国际秩序的维护者，是中国坚定不移的选择。各国人民携起手来，推动建设相互尊重、公平正义、合作共赢的新型国际关系，共同构建人类命运共同体，让和平的薪火代代相传，让发展的动力源源不断，让文明的光芒熠熠生辉，就将共同创造人类的美好未来。
+
+八十年风雨沧桑，八十年不懈奋斗，中华民族从苦难走向辉煌，迎来了伟大复兴的光明前景。让我们不忘历史、奋发图强，不断创造更加美好的幸福生活，同心共筑中华民族更加辉煌的未来。(String), 2017-12-14 15:24:52.0(Timestamp), 7(Integer), 2017-12-14 15:24:52.0(Timestamp)
+2017-12-14 15:24:52,611 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:24:52,619 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-14 15:24:52,620 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 7(Integer), 7(Integer)
+2017-12-14 15:24:52,623 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:24:54,491 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 15:24:54,492 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 20(Integer)
+2017-12-14 15:24:54,495 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:24:54,496 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 15:24:54,497 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 20(Integer)
+2017-12-14 15:24:54,498 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 15:25:29,069 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:25:29,070 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:25:29,074 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 17
+2017-12-14 15:25:29,075 INFO (ArticleServiceImpl.java:46)- 共有17条记录
+2017-12-14 15:25:29,075 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 15:25:29,076 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 15:25:29,076 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 15:25:29,077 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 15:25:29,080 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 15:25:29,082 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:25:29,083 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:25:29,087 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 17
+2017-12-14 15:25:45,499 INFO (ArticleController.java:143)- 正在前往新增文章界面……
+2017-12-14 15:25:59,053 INFO (ArticleController.java:158)- 即将插入数据库的文章信息为：Article{articleid=null, articletitle='习近平：紧扣新时代要求推动改革发展', articlecontent='央视网消息（新闻联播）：中共中央总书记、国家主席、中央军委主席习近平近日在江苏徐州市考察时强调，深入学习贯彻党的十九大精神是当前和今后一个时期全党全国的首要政治任务。各地区各部门要深刻理解和精准把握党的十九大精神，结合实际扎扎实实贯彻党的十九大决策部署，紧扣中国特色社会主义新时代的新要求，推动党和国家各项事业不断迈上新台阶。', articleaddtime=Thu Dec 14 15:25:59 CST 2017, articleuserid=7, articlecommentnum=null, articlelastcommenttime=Thu Dec 14 15:25:59 CST 2017, user=null}
+2017-12-14 15:25:59,057 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into article ( articletitle, articlecontent, articleaddtime, articleuserid, articlelastcommenttime ) values ( ?, ?, ?, ?, ? ) 
+2017-12-14 15:25:59,059 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 习近平：紧扣新时代要求推动改革发展(String), 央视网消息（新闻联播）：中共中央总书记、国家主席、中央军委主席习近平近日在江苏徐州市考察时强调，深入学习贯彻党的十九大精神是当前和今后一个时期全党全国的首要政治任务。各地区各部门要深刻理解和精准把握党的十九大精神，结合实际扎扎实实贯彻党的十九大决策部署，紧扣中国特色社会主义新时代的新要求，推动党和国家各项事业不断迈上新台阶。(String), 2017-12-14 15:25:59.0(Timestamp), 7(Integer), 2017-12-14 15:25:59.0(Timestamp)
+2017-12-14 15:25:59,156 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:25:59,164 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-14 15:25:59,165 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 7(Integer), 7(Integer)
+2017-12-14 15:25:59,166 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2017-12-14 15:26:00,867 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 15:26:00,869 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 21(Integer)
+2017-12-14 15:26:00,870 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:26:00,871 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 15:26:00,872 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 21(Integer)
+2017-12-14 15:26:00,873 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 15:26:05,853 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:26:05,854 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:26:05,858 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 18
+2017-12-14 15:26:05,858 INFO (ArticleServiceImpl.java:46)- 共有18条记录
+2017-12-14 15:26:05,858 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 15:26:05,859 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 15:26:05,859 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 15:26:05,860 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 15:26:05,863 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 15:26:05,864 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:26:05,865 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:26:05,870 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 18
+2017-12-14 15:26:26,189 INFO (UserController.java:42)- 正在前往登录页面…………
+2017-12-14 15:26:27,914 INFO (UserController.java:36)- 正在前往注册页面…………
+2017-12-14 15:26:34,723 INFO (UserController.java:74)- 正在检测用户手机号是否存在…………
+2017-12-14 15:26:34,725 INFO (UserController.java:75)- userphoneuserphoneuserphoneuserphone15161183333
+2017-12-14 15:26:34,728 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 15:26:34,730 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161183333(String)
+2017-12-14 15:26:34,732 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 15:26:34,733 INFO (UserController.java:82)- 不存在
+2017-12-14 15:26:34,733 INFO (UserController.java:85)- 检测完成…………
+2017-12-14 15:26:49,552 INFO (UserController.java:54)- 正在注册…………
+2017-12-14 15:26:49,553 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into user (userid,username, userphone, userpassword ) values (?,?, ?, ? ) 
+2017-12-14 15:26:49,554 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: null, 联蔚新闻(String), 15161183333(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-14 15:26:49,659 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:26:49,660 INFO (UserController.java:57)- 注册完成…………
+2017-12-14 15:26:49,660 INFO (UserController.java:58)- 添加用户日志…………
+2017-12-14 15:26:49,661 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into userlog ( userphone ) values ( ? ) 
+2017-12-14 15:26:49,661 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161183333(String)
+2017-12-14 15:26:49,751 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:26:59,509 INFO (UserController.java:74)- 正在检测用户手机号是否存在…………
+2017-12-14 15:26:59,510 INFO (UserController.java:75)- userphoneuserphoneuserphoneuserphone15161183333
+2017-12-14 15:26:59,512 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 15:26:59,513 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161183333(String)
+2017-12-14 15:26:59,515 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:26:59,516 ERROR (UserController.java:79)- 已存在
+2017-12-14 15:26:59,517 INFO (UserController.java:85)- 检测完成…………
+2017-12-14 15:27:01,612 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? 
+2017-12-14 15:27:01,613 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161183333(String)
+2017-12-14 15:27:01,615 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:27:01,616 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select userid,username,userphone,userpassword,usergrade from user where userphone = ? and userpassword = ? 
+2017-12-14 15:27:01,617 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161183333(String), e10adc3949ba59abbe56e057f20f883e(String)
+2017-12-14 15:27:01,619 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:27:01,620 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select logid, userphone, failtimes, lastfailtime from userlog where userphone = ? 
+2017-12-14 15:27:01,621 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161183333(String)
+2017-12-14 15:27:01,623 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:27:01,624 INFO (UserController.java:171)- 登陆成功
+2017-12-14 15:27:01,624 INFO (UserController.java:172)- 重置用户密码输错次数……
+2017-12-14 15:27:01,625 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update userlog set failtimes = 0 where userphone = ? 
+2017-12-14 15:27:01,625 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 15161183333(String)
+2017-12-14 15:27:01,682 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:27:01,682 INFO (UserController.java:175)- 用户密码输错次数已重置为0……
+2017-12-14 15:27:01,687 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:27:01,687 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:27:01,691 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 18
+2017-12-14 15:27:01,692 INFO (ArticleServiceImpl.java:46)- 共有18条记录
+2017-12-14 15:27:01,692 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 15:27:01,692 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 15:27:01,693 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 15:27:01,694 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 15:27:01,697 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 15:27:01,698 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:27:01,699 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:27:01,702 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 18
+2017-12-14 15:27:04,268 INFO (ArticleController.java:143)- 正在前往新增文章界面……
+2017-12-14 15:29:07,631 INFO (ArticleController.java:158)- 即将插入数据库的文章信息为：Article{articleid=null, articletitle='当程序员没了互联网，该如何继续学习写代码？', articlecontent='当你一直投身一个项目且开发工作很饱和时，有时候你会对这个项目感到厌倦。相反，如果同时开发多个项目这有助于保持开发热情，如果你厌倦了其中一个项目，可以转到其他项目。这样，你将永远在前进，能够持续开发应用程序。
+然而，同时进行多个项目最大的好处是你的成长速度很快。你有多种观点，多种思路、多种方式来解决问题，最主要的是能够获得很多动力。目前我在同时开发超过 5 个应用程序，为了让用户收益，近期我可能就会发布一个。
+优秀的开发人员用编程来思考和表达。如果你告诉我一个想法，我不会认为这是一个想法，而是将它开发成一个应用程序。一旦你做到用代码思考，用代码说话，那么你就是一名真正的开发者了。
+学习编程并不依赖于互联网、指导或者书籍。不要找借口，不要犹豫不决，行动起来！我并不是现代程序员的典范，所以我的建议你可以借鉴，但是自己也需要进行尝试，从错误中学习。记住：这个世界并不需要你，但你可以让它需要你。今天开始行动，明天才会成功。
+链接：https://thecodrr.com/2017/12/08/learning-programming-no-internet', articleaddtime=Thu Dec 14 15:29:07 CST 2017, articleuserid=8, articlecommentnum=null, articlelastcommenttime=Thu Dec 14 15:29:07 CST 2017, user=null}
+2017-12-14 15:29:07,634 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into article ( articletitle, articlecontent, articleaddtime, articleuserid, articlelastcommenttime ) values ( ?, ?, ?, ?, ? ) 
+2017-12-14 15:29:07,635 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 当程序员没了互联网，该如何继续学习写代码？(String), 当你一直投身一个项目且开发工作很饱和时，有时候你会对这个项目感到厌倦。相反，如果同时开发多个项目这有助于保持开发热情，如果你厌倦了其中一个项目，可以转到其他项目。这样，你将永远在前进，能够持续开发应用程序。
+然而，同时进行多个项目最大的好处是你的成长速度很快。你有多种观点，多种思路、多种方式来解决问题，最主要的是能够获得很多动力。目前我在同时开发超过 5 个应用程序，为了让用户收益，近期我可能就会发布一个。
+优秀的开发人员用编程来思考和表达。如果你告诉我一个想法，我不会认为这是一个想法，而是将它开发成一个应用程序。一旦你做到用代码思考，用代码说话，那么你就是一名真正的开发者了。
+学习编程并不依赖于互联网、指导或者书籍。不要找借口，不要犹豫不决，行动起来！我并不是现代程序员的典范，所以我的建议你可以借鉴，但是自己也需要进行尝试，从错误中学习。记住：这个世界并不需要你，但你可以让它需要你。今天开始行动，明天才会成功。
+链接：https://thecodrr.com/2017/12/08/learning-programming-no-internet(String), 2017-12-14 15:29:07.0(Timestamp), 8(Integer), 2017-12-14 15:29:07.0(Timestamp)
+2017-12-14 15:29:07,792 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:29:07,813 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-14 15:29:07,815 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 8(Integer), 8(Integer)
+2017-12-14 15:29:07,818 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:29:09,699 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 15:29:09,700 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 22(Integer)
+2017-12-14 15:29:09,701 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:29:09,702 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 15:29:09,703 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 22(Integer)
+2017-12-14 15:29:09,703 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 15:29:15,839 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:29:15,840 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:29:15,843 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 19
+2017-12-14 15:29:15,845 INFO (ArticleServiceImpl.java:46)- 共有19条记录
+2017-12-14 15:29:15,845 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 15:29:15,846 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 15:29:15,846 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 15:29:15,847 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 15:29:15,850 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 15:29:15,851 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:29:15,852 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:29:15,855 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 19
+2017-12-14 15:31:01,824 INFO (ArticleController.java:143)- 正在前往新增文章界面……
+2017-12-14 15:31:37,311 INFO (ArticleController.java:158)- 即将插入数据库的文章信息为：Article{articleid=null, articletitle='阿里腾讯的棋子，思聪吃翔的筹码：共享项目是年度最大谎言？', articlecontent='据统计，2016年中国的共享经济市场规模接近4万亿元；2017年，共享系宣告进入死亡倒计时。截至目前，共有19家投身共享经济的企业宣告倒闭或终止服务。
+
+“我们的每一个牛逼都是含着泪吹出来的，那花了巨大的成本和心血，也让我们最终走到今天这个地步。但我从没有后悔进入这个行业。有时候我想，如果还有机会能够做下去，如果当时在资本市场融到钱，如果用户和股东还能继续信任我们，我们完全有可能去创造一个很有吸引力的商业模式。”有人说，经历2016年的“资本寒冬”之后，2017年是“共享”的春天。但另一方面，“共享”概念很像资本的“春药”，只要听到这两个字，投资人就有按捺不住的砸钱热情。
+
+IT时代网更是将共享项目比成“共享卖春”，“这些卖春者有钱赚，是受益者。消费者在这个过程中，享受了服务和便利，也是受益者。而干了几年之后，卖春者多半还是要找个老实人嫁了、娶了，这个老实人就是那个‘终极接盘侠’。这些卖春者因为长期遭受蹂躏，最终跟老实人结合之后，还能不能安稳过日子、寿命还有多长、有没有传染病、传宗接代的能力有没有被破坏，只能老实人自己消化了。”', articleaddtime=Thu Dec 14 15:31:37 CST 2017, articleuserid=8, articlecommentnum=null, articlelastcommenttime=Thu Dec 14 15:31:37 CST 2017, user=null}
+2017-12-14 15:31:37,316 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: insert into article ( articletitle, articlecontent, articleaddtime, articleuserid, articlelastcommenttime ) values ( ?, ?, ?, ?, ? ) 
+2017-12-14 15:31:37,317 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 阿里腾讯的棋子，思聪吃翔的筹码：共享项目是年度最大谎言？(String), 据统计，2016年中国的共享经济市场规模接近4万亿元；2017年，共享系宣告进入死亡倒计时。截至目前，共有19家投身共享经济的企业宣告倒闭或终止服务。
+
+“我们的每一个牛逼都是含着泪吹出来的，那花了巨大的成本和心血，也让我们最终走到今天这个地步。但我从没有后悔进入这个行业。有时候我想，如果还有机会能够做下去，如果当时在资本市场融到钱，如果用户和股东还能继续信任我们，我们完全有可能去创造一个很有吸引力的商业模式。”有人说，经历2016年的“资本寒冬”之后，2017年是“共享”的春天。但另一方面，“共享”概念很像资本的“春药”，只要听到这两个字，投资人就有按捺不住的砸钱热情。
+
+IT时代网更是将共享项目比成“共享卖春”，“这些卖春者有钱赚，是受益者。消费者在这个过程中，享受了服务和便利，也是受益者。而干了几年之后，卖春者多半还是要找个老实人嫁了、娶了，这个老实人就是那个‘终极接盘侠’。这些卖春者因为长期遭受蹂躏，最终跟老实人结合之后，还能不能安稳过日子、寿命还有多长、有没有传染病、传宗接代的能力有没有被破坏，只能老实人自己消化了。”(String), 2017-12-14 15:31:37.0(Timestamp), 8(Integer), 2017-12-14 15:31:37.0(Timestamp)
+2017-12-14 15:31:37,419 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2017-12-14 15:31:37,426 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-14 15:31:37,427 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 8(Integer), 8(Integer)
+2017-12-14 15:31:37,430 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2017-12-14 15:31:38,977 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 15:31:38,978 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 23(Integer)
+2017-12-14 15:31:38,980 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:31:38,982 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select co.*,u.username,u.usergrade,u.userid from comment co,user u where co.commentarticleid = ? AND co.commentuserid=u.userid 
+2017-12-14 15:31:38,982 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 23(Integer)
+2017-12-14 15:31:38,983 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2017-12-14 15:31:42,152 INFO (ArticleController.java:100)- 传进来的articleid是：6240889
+2017-12-14 15:31:42,152 INFO (ArticleController.java:102)- 改变之后的articleid是：23
+2017-12-14 15:31:42,154 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 15:31:42,155 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 23(Integer)
+2017-12-14 15:31:42,157 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:31:42,165 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:31:42,166 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:31:42,169 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 20
+2017-12-14 15:31:42,170 INFO (ArticleServiceImpl.java:46)- 共有20条记录
+2017-12-14 15:31:42,170 INFO (ArticleServiceImpl.java:49)- 共有2页
+2017-12-14 15:31:42,170 INFO (ArticleServiceImpl.java:52)- 当前的起始记录为第：0条
+2017-12-14 15:31:42,171 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC limit ?,? 
+2017-12-14 15:31:42,171 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 0(Integer), 10(Integer)
+2017-12-14 15:31:42,173 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 10
+2017-12-14 15:31:42,175 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 
+2017-12-14 15:31:42,175 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2017-12-14 15:31:42,179 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 20
+2017-12-14 15:31:48,058 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleuserid = ? AND u.userid=? ORDER BY articleaddtime DESC 
+2017-12-14 15:31:48,059 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 8(Integer), 8(Integer)
+2017-12-14 15:31:48,062 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2017-12-14 15:31:49,213 INFO (ArticleController.java:100)- 传进来的articleid是：6240889
+2017-12-14 15:31:49,214 INFO (ArticleController.java:102)- 改变之后的articleid是：23
+2017-12-14 15:31:49,215 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where articleid = ? AND a.articleuserid=u.userid 
+2017-12-14 15:31:49,216 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 23(Integer)
+2017-12-14 15:31:49,220 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2017-12-14 15:31:49,229 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select a.*,u.username from article a,user u where a.articleuserid=u.userid ORDER BY articlelastcommenttime DESC 

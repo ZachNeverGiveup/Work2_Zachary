@@ -182,11 +182,11 @@
         type="text/javascript"></script>
 <script src="<%=basePath%>js/mdui.js"></script>
 <script src="<%=basePath%>js/jquery.min.js"></script>
+<script src="<%=basePath%>layer/layer.js"></script>
 <script type="text/javascript">
     //欢迎提示
-    mdui.snackbar({
-        message: '欢迎进入个人中心！',
-        position: 'top'
+    layer.ready(function(){
+        layer.msg('欢迎进入个人中心', {anim: 4});
     });
     //编辑文章按钮
    function toEditArticle(id){
@@ -203,10 +203,7 @@
                         articleid:id,
                     },
                     function(data,status){
-                        mdui.snackbar({
-                            message: '删除成功！',
-                            position: 'top'
-                        });
+                        layer.msg('删除成功！', {anim: 4});
                         console.log($(this).parents(".mdui-table-row-selected"));
                         _this.parents(".mdui-table-row-selected").remove();
                     });

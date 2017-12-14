@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -19,7 +20,8 @@ import java.text.SimpleDateFormat;
 public class CommentController {
 
     @Autowired
-    CommentServiceImpl commentService;
+    private CommentServiceImpl commentService;
+    //日志记录
     private static Logger logger = LoggerFactory.getLogger(CommentController.class);
 
     /**
@@ -42,5 +44,14 @@ public class CommentController {
         comment.setCommenttime(dFormat.parse(formatDate));
         commentService.insertSelective(comment);
         return "redirect:articleDetail.do?id="+articleid;
+    }
+    /**
+     * commentDel.do
+     * 删除评论的方法
+     */
+    @RequestMapping("commentDel.do")
+    @ResponseBody
+    public void commentDel(Integer commentid){
+        commentService.deleteByPrimaryKey(commentid);
     }
 }

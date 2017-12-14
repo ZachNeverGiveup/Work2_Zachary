@@ -98,7 +98,7 @@
   </select>
   <select id="selectCommentsByArticleId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select
-    co.*,u.username
+    co.*,u.username,u.usergrade,u.userid
     from comment co,user u
     where co.commentarticleid = #{articleId,jdbcType=INTEGER} AND co.commentuserid=u.userid
   </select>

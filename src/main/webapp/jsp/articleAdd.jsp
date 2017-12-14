@@ -72,7 +72,7 @@
                 <textarea id="mc" name="articlecontent" class="mdui-textfield-input"   maxlength="500"></textarea>
             </div>
             <button id="mu" class="mdui-btn mdui-btn-block mdui-color-blue mdui-ripple" >
-                <i class="icon ion-ios-cloud-upload-outline mdui-icon material-icons"></i>&nbsp;确认发表
+                <i class="icon ion-paper-airplane mdui-icon material-icons"></i>&nbsp;确认发表
             </button>
         </form>
     </div>
@@ -102,11 +102,11 @@
         type="text/javascript"></script>
 <script src="js/mdui.js"></script>
 <script src="js/jquery.min.js"></script>
+<script src="<%=basePath%>layer/layer.js"></script>
 <script type="text/javascript">
-    // 欢迎提示
-    mdui.snackbar({
-        message: '进入发表文章模式……！',
-        position: 'top'
+    //欢迎提示
+    layer.ready(function(){
+        layer.msg('进入修改文章模式……', {anim: 4});
     });
 </script>
 </html>

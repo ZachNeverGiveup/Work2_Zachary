@@ -4,6 +4,8 @@ import com.connext.dao.ArticleMapper;
 import com.connext.dao.CommentMapper;
 import com.connext.pojo.Article;
 import com.connext.pojo.Comment;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,16 @@ public class CommentServiceImpl implements CommentService{
 
     @Autowired
     private ArticleMapper articleMapper;
+
+    //日志记录
+    private static Logger logger = LoggerFactory.getLogger(CommentServiceImpl.class);
+
+    /**
+     * 根据文章id查所有的评论
+     * 按时间排序
+     * @param articleId
+     * @return
+     */
     @Override
     public List<Comment> selectCommentsByArticleId(Integer articleId) {
         return commentMapper.selectCommentsByArticleId(articleId);
@@ -44,5 +56,26 @@ public class CommentServiceImpl implements CommentService{
         articleNew.setArticlelastcommenttime(record.getCommenttime());
         //调用dao层的方法将其更新
         articleMapper.updateByPrimaryKeySelective(articleNew);
+    }
+
+    /**
+     *
+     * 先把这篇文章的评论数减一（此处不能先把评论删了，否则会报NPE）
+     * 然后再删除评论的方法
+     * @param commentid
+     */
+    @Override
+    public void deleteByPrimaryKey(Integer commentid) {
+
+        //1 根据这个commentid找出这个文章的信息
+        Comment comment = commentMapper.selectByPrimaryKey(commentid);
+        logger.info("comment的文章id："+comment.getCommentarticleid());
+        Article article = articleMapper.selectByPrimaryKey(comment.getCommentarticleid());
+        //2 将这个文章的评论数减一
+        article.setArticlecommentnum(article.getArticlecommentnum()-1);
+        //3 更新文章信息
+        articleMapper.updateByPrimaryKeySelective(article);
+        //4 删除这个评论
+        commentMapper.deleteByPrimaryKey(commentid);
     }
 }
