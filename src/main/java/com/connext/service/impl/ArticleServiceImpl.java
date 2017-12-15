@@ -1,14 +1,14 @@
-package com.connext.service;
+package com.connext.service.impl;
 
 import com.connext.dao.ArticleMapper;
-import com.connext.pojo.Article;
+import com.connext.dao.CommentMapper;
+import com.connext.model.Article;
+import com.connext.service.ArticleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -20,6 +20,8 @@ public class ArticleServiceImpl implements ArticleService {
     @Autowired
     private ArticleMapper articleMapper;
 
+    @Autowired
+    private CommentMapper commentMapper;
     //日志
     private static Logger logger = LoggerFactory.getLogger(ArticleServiceImpl.class);
     /**
@@ -97,11 +99,13 @@ public class ArticleServiceImpl implements ArticleService {
 
     /**
      * 根据id删除文章
+     * 注意：！！！此处也要把文章的评论删除！
      * @param id
      */
     @Override
     public void deleteArticleById(Integer id) {
         articleMapper.deleteByPrimaryKey(id);
+        commentMapper.deleteByArticleId(id);
     }
 }
 

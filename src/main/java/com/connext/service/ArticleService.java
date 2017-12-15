@@ -1,6 +1,6 @@
 package com.connext.service;
 
-import com.connext.pojo.Article;
+import com.connext.model.Article;
 
 import java.util.List;
 

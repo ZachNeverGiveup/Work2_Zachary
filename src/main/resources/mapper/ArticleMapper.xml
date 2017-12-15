@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.connext.dao.ArticleMapper">
-    <resultMap id="BaseResultMap" type="com.connext.pojo.Article">
+    <resultMap id="BaseResultMap" type="com.connext.model.Article">
         <id column="articleid" property="articleid" jdbcType="INTEGER"/>
         <result column="articletitle" property="articletitle" jdbcType="VARCHAR"/>
         <result column="articlecontent" property="articlecontent" jdbcType="VARCHAR"/>
@@ -9,7 +9,7 @@
         <result column="articleuserid" property="articleuserid" jdbcType="INTEGER"/>
         <result column="articlecommentnum" property="articlecommentnum" jdbcType="INTEGER"/>
         <result column="articlelastcommenttime" property="articlelastcommenttime" jdbcType="TIMESTAMP"/>
-        <association property="user" javaType="com.connext.pojo.User">
+        <association property="user" javaType="com.connext.model.User">
             <id column="userid" property="userid" jdbcType="INTEGER" />
             <result column="username" property="username" jdbcType="VARCHAR" />
             <result column="userphone" property="userphone" jdbcType="VARCHAR" />
@@ -82,7 +82,7 @@
         articleid, articletitle, articlecontent, articleaddtime, articleuserid, articlecommentnum,
         articlelastcommenttime
     </sql>
-    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.connext.pojo.ArticleExample">
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.connext.model.ArticleExample">
         select
         <if test="distinct">
             distinct
@@ -128,13 +128,13 @@
     delete from article
     where articleid = #{articleid,jdbcType=INTEGER}
   </delete>
-    <delete id="deleteByExample" parameterType="com.connext.pojo.ArticleExample">
+    <delete id="deleteByExample" parameterType="com.connext.model.ArticleExample">
         delete from article
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" parameterType="com.connext.pojo.Article">
+    <insert id="insert" parameterType="com.connext.model.Article">
     insert into article (articleid, articletitle, articlecontent, 
       articleaddtime, articleuserid, articlecommentnum, 
       articlelastcommenttime)
@@ -142,7 +142,7 @@
       #{articleaddtime,jdbcType=TIMESTAMP}, #{articleuserid,jdbcType=INTEGER}, #{articlecommentnum,jdbcType=INTEGER}, 
       #{articlelastcommenttime,jdbcType=TIMESTAMP})
   </insert>
-    <insert id="insertSelective" parameterType="com.connext.pojo.Article">
+    <insert id="insertSelective" parameterType="com.connext.model.Article">
         insert into article
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="articleid != null">
@@ -191,7 +191,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="com.connext.pojo.ArticleExample" resultType="java.lang.Integer">
+    <select id="countByExample" parameterType="com.connext.model.ArticleExample" resultType="java.lang.Integer">
         select count(*) from article
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
@@ -240,7 +240,7 @@
         </if>
     </update>
     <!-- 根据主键更新文章信息-->
-    <update id="updateByPrimaryKeySelective" parameterType="com.connext.pojo.Article">
+    <update id="updateByPrimaryKeySelective" parameterType="com.connext.model.Article">
         update article
         <set>
             <if test="articletitle != null">
@@ -264,7 +264,7 @@
         </set>
         where articleid = #{articleid,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.connext.pojo.Article">
+    <update id="updateByPrimaryKey" parameterType="com.connext.model.Article">
     update article
     set articletitle = #{articletitle,jdbcType=VARCHAR},
       articlecontent = #{articlecontent,jdbcType=VARCHAR},

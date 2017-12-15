@@ -1,7 +1,7 @@
-<%@ page import="com.connext.pojo.User" %>
+<%@ page import="com.connext.model.User" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.connext.pojo.Article" %>
-<%@ page import="com.connext.pojo.Admin" %>
+<%@ page import="com.connext.model.Article" %>
+<%@ page import="com.connext.model.Admin" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -142,7 +142,7 @@
         <button id="dc" class="mdui-btn mdui-ripple mdui-color-blue" mdui-dialog-confirm>确定</button>
     </div>
 </div>
-<div class="mdui-dialog" id="dialog2">
+<%--<div class="mdui-dialog" id="dialog2">
     <div class="mdui-dialog-title">
         <h1 class="mdui-text-color-blue"  style="text-align: middle" id="messageTitle"></h1>
         <h4 class="mdui-text-color-grey"  style="text-align: middle" id="messageDate"></h4>
@@ -151,7 +151,7 @@
     <div class="mdui-dialog-actions">
         <button class="mdui-btn mdui-ripple" mdui-dialog-cancel>关闭</button>
     </div>
-</div>
+</div>--%>
 <div class="mdui-fab-wrapper" id="fab"  mdui-fab="{trigger: 'hover'}">
     <button class="mdui-fab mdui-ripple mdui-color-theme">
         <!-- 默认显示的图标 ion-ios-plus-empty-->

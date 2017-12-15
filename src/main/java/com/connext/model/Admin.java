@@ -1,14 +1,17 @@
-package com.connext.pojo;
-
+package com.connext.model;
+/**
+ * 管理员的model层属性和getter/setter方法
+ */
 public class Admin {
+    //管理员主键id
     private Integer adminid;
-
+    //管理员名
     private String adminname;
-
+    //管理员手机号
     private String adminphone;
-
+    //管理员密码
     private String adminpassword;
-
+    //管理员等级
     private Integer admingrade;
 
     public Integer getAdminid() {

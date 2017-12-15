@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.connext.dao.UserlogMapper" >
-    <resultMap id="BaseResultMap" type="com.connext.pojo.Userlog" >
+    <resultMap id="BaseResultMap" type="com.connext.model.Userlog" >
         <id column="logid" property="logid" jdbcType="INTEGER" />
         <result column="userphone" property="userphone" jdbcType="VARCHAR" />
         <result column="failtimes" property="failtimes" jdbcType="INTEGER" />
@@ -68,7 +68,7 @@
     <sql id="Base_Column_List" >
         logid, userphone, failtimes, lastfailtime
     </sql>
-    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.connext.pojo.UserlogExample" >
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.connext.model.UserlogExample" >
         select
         <if test="distinct" >
             distinct
@@ -99,19 +99,19 @@
         delete from userlog
         where logid = #{logid,jdbcType=INTEGER}
     </delete>
-    <delete id="deleteByExample" parameterType="com.connext.pojo.UserlogExample" >
+    <delete id="deleteByExample" parameterType="com.connext.model.UserlogExample" >
         delete from userlog
         <if test="_parameter != null" >
             <include refid="Example_Where_Clause" />
         </if>
     </delete>
-    <insert id="insert" parameterType="com.connext.pojo.Userlog" >
+    <insert id="insert" parameterType="com.connext.model.Userlog" >
         insert into userlog (logid, userphone, failtimes,
         lastfailtime)
         values (#{logid,jdbcType=INTEGER}, #{userphone,jdbcType=VARCHAR}, #{failtimes,jdbcType=INTEGER},
         #{lastfailtime,jdbcType=TIMESTAMP})
     </insert>
-    <insert id="insertSelective" parameterType="com.connext.pojo.Userlog" >
+    <insert id="insertSelective" parameterType="com.connext.model.Userlog" >
         insert into userlog
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="logid != null" >
@@ -142,7 +142,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="com.connext.pojo.UserlogExample" resultType="java.lang.Integer" >
+    <select id="countByExample" parameterType="com.connext.model.UserlogExample" resultType="java.lang.Integer" >
         select count(*) from userlog
         <if test="_parameter != null" >
             <include refid="Example_Where_Clause" />
@@ -178,7 +178,7 @@
             <include refid="Update_By_Example_Where_Clause" />
         </if>
     </update>
-    <update id="updateByPrimaryKeySelective" parameterType="com.connext.pojo.Userlog" >
+    <update id="updateByPrimaryKeySelective" parameterType="com.connext.model.Userlog" >
         update userlog
         <set >
             <if test="userphone != null" >
@@ -193,14 +193,14 @@
         </set>
         where logid = #{logid,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.connext.pojo.Userlog" >
+    <update id="updateByPrimaryKey" parameterType="com.connext.model.Userlog" >
         update userlog
         set userphone = #{userphone,jdbcType=VARCHAR},
         failtimes = #{failtimes,jdbcType=INTEGER},
         lastfailtime = #{lastfailtime,jdbcType=TIMESTAMP}
         where logid = #{logid,jdbcType=INTEGER}
     </update>
-    <update id="updateAddFailtimesByUserphone" parameterType="com.connext.pojo.Userlog" >
+    <update id="updateAddFailtimesByUserphone" parameterType="com.connext.model.Userlog" >
         update userlog
         set  failtimes = failtimes+1,
         lastfailtime = #{lastfailtime,jdbcType=TIMESTAMP}

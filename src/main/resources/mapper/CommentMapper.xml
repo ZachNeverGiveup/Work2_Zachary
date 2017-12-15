@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.connext.dao.CommentMapper" >
-  <resultMap id="BaseResultMap" type="com.connext.pojo.Comment" >
+  <resultMap id="BaseResultMap" type="com.connext.model.Comment" >
     <id column="commentid" property="commentid" jdbcType="INTEGER" />
     <result column="commentcontent" property="commentcontent" jdbcType="VARCHAR" />
     <result column="commentuserid" property="commentuserid" jdbcType="INTEGER" />
     <result column="commentarticleid" property="commentarticleid" jdbcType="INTEGER" />
     <result column="commenttime" property="commenttime" jdbcType="TIMESTAMP" />
-    <association property="user" javaType="com.connext.pojo.User">
+    <association property="user" javaType="com.connext.model.User">
       <id column="userid" property="userid" jdbcType="INTEGER" />
       <result column="username" property="username" jdbcType="VARCHAR" />
       <result column="userphone" property="userphone" jdbcType="VARCHAR" />
@@ -76,7 +76,7 @@
   <sql id="Base_Column_List" >
     commentid, commentcontent, commentuserid, commentarticleid, commenttime
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.connext.pojo.CommentExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.connext.model.CommentExample" >
     select
     <if test="distinct" >
       distinct
@@ -96,29 +96,36 @@
     from comment
     where commentid = #{commentid,jdbcType=INTEGER}
   </select>
+  <!--根据文章主键查评论-->
   <select id="selectCommentsByArticleId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select
     co.*,u.username,u.usergrade,u.userid
     from comment co,user u
     where co.commentarticleid = #{articleId,jdbcType=INTEGER} AND co.commentuserid=u.userid
   </select>
+  <!--根据评论主键删评论-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from comment
     where commentid = #{commentid,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.connext.pojo.CommentExample" >
+  <!--根据文章主键删评论-->
+  <delete id="deleteByArticleId" parameterType="java.lang.Integer" >
+    delete from comment
+    where commentarticleid = #{commentarticleid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.connext.model.CommentExample" >
     delete from comment
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.connext.pojo.Comment" >
+  <insert id="insert" parameterType="com.connext.model.Comment" >
     insert into comment (commentid, commentcontent, commentuserid, 
       commentarticleid, commenttime)
     values (#{commentid,jdbcType=INTEGER}, #{commentcontent,jdbcType=VARCHAR}, #{commentuserid,jdbcType=INTEGER}, 
       #{commentarticleid,jdbcType=INTEGER}, #{commenttime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.connext.pojo.Comment" >
+  <insert id="insertSelective" parameterType="com.connext.model.Comment" >
     insert into comment
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="commentid != null" >
@@ -155,7 +162,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.connext.pojo.CommentExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.connext.model.CommentExample" resultType="java.lang.Integer" >
     select count(*) from comment
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -195,7 +202,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.connext.pojo.Comment" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.connext.model.Comment" >
     update comment
     <set >
       <if test="commentcontent != null" >
@@ -213,7 +220,7 @@
     </set>
     where commentid = #{commentid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.connext.pojo.Comment" >
+  <update id="updateByPrimaryKey" parameterType="com.connext.model.Comment" >
     update comment
     set commentcontent = #{commentcontent,jdbcType=VARCHAR},
       commentuserid = #{commentuserid,jdbcType=INTEGER},

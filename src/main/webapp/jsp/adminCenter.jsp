@@ -1,7 +1,7 @@
-<%@ page import="com.connext.pojo.User" %>
+<%@ page import="com.connext.model.User" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.connext.pojo.Article" %>
-<%@ page import="com.connext.pojo.Admin" %>
+<%@ page import="com.connext.model.Article" %>
+<%@ page import="com.connext.model.Admin" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>

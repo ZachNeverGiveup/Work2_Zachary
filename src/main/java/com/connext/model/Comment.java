@@ -1,18 +1,21 @@
-package com.connext.pojo;
+package com.connext.model;
 
 import java.util.Date;
-
+/**
+ * 评论的model层属性和getter/setter方法
+ */
 public class Comment {
+    //评论主键id
     private Integer commentid;
-
+    //评论内容
     private String commentcontent;
-
+    //评论的用户id
     private Integer commentuserid;
-
+    //评论的文章id
     private Integer commentarticleid;
-
+    //评论的时间
     private Date commenttime;
-
+    //评论所属的用户信息
     private User user;
 
     public Integer getCommentid() {

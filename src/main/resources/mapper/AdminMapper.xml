@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.connext.dao.AdminMapper">
-    <resultMap id="BaseResultMap" type="com.connext.pojo.Admin">
+    <resultMap id="BaseResultMap" type="com.connext.model.Admin">
         <id column="adminid" property="adminid" jdbcType="INTEGER"/>
         <result column="adminname" property="adminname" jdbcType="VARCHAR"/>
         <result column="adminphone" property="adminphone" jdbcType="VARCHAR"/>
@@ -71,7 +71,7 @@
     <sql id="Base_Column_List">
         adminid, adminname, adminphone, adminpassword, admingrade
     </sql>
-    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.connext.pojo.AdminExample">
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.connext.model.AdminExample">
         select
         <if test="distinct">
             distinct
@@ -95,19 +95,19 @@
     delete from admin
     where adminid = #{adminid,jdbcType=INTEGER}
   </delete>
-    <delete id="deleteByExample" parameterType="com.connext.pojo.AdminExample">
+    <delete id="deleteByExample" parameterType="com.connext.model.AdminExample">
         delete from admin
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" parameterType="com.connext.pojo.Admin">
+    <insert id="insert" parameterType="com.connext.model.Admin">
     insert into admin (adminid, adminname, adminphone, 
       adminpassword, admingrade)
     values (#{adminid,jdbcType=INTEGER}, #{adminname,jdbcType=VARCHAR}, #{adminphone,jdbcType=VARCHAR}, 
       #{adminpassword,jdbcType=VARCHAR}, #{admingrade,jdbcType=INTEGER})
   </insert>
-    <insert id="insertSelective" parameterType="com.connext.pojo.Admin">
+    <insert id="insertSelective" parameterType="com.connext.model.Admin">
         insert into admin
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="adminid != null">
@@ -144,7 +144,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="com.connext.pojo.AdminExample" resultType="java.lang.Integer">
+    <select id="countByExample" parameterType="com.connext.model.AdminExample" resultType="java.lang.Integer">
         select count(*) from admin
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
@@ -184,7 +184,7 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
-    <update id="updateByPrimaryKeySelective" parameterType="com.connext.pojo.Admin">
+    <update id="updateByPrimaryKeySelective" parameterType="com.connext.model.Admin">
         update admin
         <set>
             <if test="adminname != null">
@@ -202,7 +202,7 @@
         </set>
         where adminid = #{adminid,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.connext.pojo.Admin">
+    <update id="updateByPrimaryKey" parameterType="com.connext.model.Admin">
     update admin
     set adminname = #{adminname,jdbcType=VARCHAR},
       adminphone = #{adminphone,jdbcType=VARCHAR},

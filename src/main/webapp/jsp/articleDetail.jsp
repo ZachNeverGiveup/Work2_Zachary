@@ -1,7 +1,7 @@
-<%@ page import="com.connext.pojo.User" %>
+<%@ page import="com.connext.model.User" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.connext.pojo.Article" %>
-<%@ page import="com.connext.pojo.Admin" %>
+<%@ page import="com.connext.model.Article" %>
+<%@ page import="com.connext.model.Admin" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -114,7 +114,7 @@
                                     <c:if test="${comment.user.usergrade>3}">超级管理员：<span class="mdui-text-color-deep-orange">${comment.user.username}</span></c:if>
                                     &nbsp;于<fmt:formatDate value="${comment.commenttime}" pattern="yyyy-MM-dd HH:mm:ss"/>发表</span>
                             </div>
-                            <c:if test="${comment.user.userid==user.userid||user.usergrade>9}">
+                            <c:if test="${comment.user.userid==user.userid||user.usergrade>1}">
                                 <div class="mdui-toolbar-spacer"></div>
                                 <button class="mdui-btn mdui-btn-dense mdui-color-red mdui-ripple" onclick="delCo(${comment.commentid},this)">删除</button>
                             </c:if>

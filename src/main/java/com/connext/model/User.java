@@ -1,13 +1,19 @@
-package com.connext.pojo;
+package com.connext.model;
 
 /**
+ * 用户的model层属性和getter/setter方法
  * Created by Zach.Zhang on 2017/12/11.
  */
 public class User {
+    //用户的主键id
     private Integer userid;
+    //用户名
     private String username;
+    //用户手机号
     private String userphone;
+    //用户密码
     private String userpassword;
+    //用户等级
     private Integer usergrade;
 
     public Integer getUserid() {

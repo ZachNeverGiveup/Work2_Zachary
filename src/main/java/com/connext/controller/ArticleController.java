@@ -1,12 +1,11 @@
 package com.connext.controller;
 
 
-import com.connext.pojo.Article;
-import com.connext.pojo.Comment;
-import com.connext.pojo.User;
-import com.connext.service.ArticleServiceImpl;
-import com.connext.service.CommentService;
-import com.connext.service.CommentServiceImpl;
+import com.connext.model.Article;
+import com.connext.model.Comment;
+import com.connext.model.User;
+import com.connext.service.impl.ArticleServiceImpl;
+import com.connext.service.impl.CommentServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,23 +1,25 @@
-package com.connext.pojo;
+package com.connext.model;
 
 import java.util.Date;
-import java.util.List;
-
+/**
+ * 文章的model层属性和getter/setter方法
+ */
 public class Article {
+    //文章主键id
     private Integer articleid;
-
+    //文章标题
     private String articletitle;
-
+    //文章内容
     private String articlecontent;
-
+    //文章的添加时间
     private Date articleaddtime;
-
+    //文章的用户id
     private Integer articleuserid;
-
+    //文章的评论数量
     private Integer articlecommentnum;
-
+    //文章的最后评论时间
     private Date articlelastcommenttime;
-
+    //文章所属的用户信息
     private User user;
 
     public Integer getArticleid() {

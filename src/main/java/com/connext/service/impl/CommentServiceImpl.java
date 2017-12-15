@@ -1,9 +1,10 @@
-package com.connext.service;
+package com.connext.service.impl;
 
 import com.connext.dao.ArticleMapper;
 import com.connext.dao.CommentMapper;
-import com.connext.pojo.Article;
-import com.connext.pojo.Comment;
+import com.connext.model.Article;
+import com.connext.model.Comment;
+import com.connext.service.CommentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import java.util.List;
  * Created by Zach.Zhang on 2017/12/11.
  */
 @Service
-public class CommentServiceImpl implements CommentService{
+public class CommentServiceImpl implements CommentService {
     @Autowired
     private CommentMapper commentMapper;
 

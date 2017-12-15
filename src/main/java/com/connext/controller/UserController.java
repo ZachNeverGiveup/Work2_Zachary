@@ -1,8 +1,8 @@
 package com.connext.controller;
 
-import com.connext.pojo.User;
-import com.connext.pojo.Userlog;
-import com.connext.service.UserServiceImpl;
+import com.connext.model.User;
+import com.connext.model.Userlog;
+import com.connext.service.impl.UserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

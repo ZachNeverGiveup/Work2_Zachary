@@ -1,6 +1,6 @@
 package com.connext.service;
 
-import com.connext.pojo.Comment;
+import com.connext.model.Comment;
 
 import java.util.List;
 

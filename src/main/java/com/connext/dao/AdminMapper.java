@@ -1,11 +1,15 @@
 package com.connext.dao;
 
-import com.connext.pojo.Admin;
-import com.connext.pojo.AdminExample;
+import com.connext.model.Admin;
+import com.connext.model.AdminExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
+/**
+ * 管理员的dao层mapper接口
+ * 没有用到
+ */
 public interface AdminMapper {
     int countByExample(AdminExample example);
 

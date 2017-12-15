@@ -1,4 +1,4 @@
-package com.connext.pojo;
+package com.connext.model;
 
 import java.util.ArrayList;
 import java.util.Date;
